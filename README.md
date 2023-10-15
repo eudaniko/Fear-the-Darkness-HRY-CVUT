@@ -1,16 +1,16 @@
-# PingPong team
+# team13
 
-Představujeme vám nejlepší online realtime tahovou strategii - PingPong.
+Představujeme vám nejlepší hru - Fear the Darkness.
 
 více info na **[WIKI](https://gitlab.fel.cvut.cz/B181_B4B39HRY/sample_project/wikis)**
 
 
 ## Členové týmu
 
-* velká pálka <velka@palka.ctu.cz>
-* malá pálka <mala@palka.ctu.cz>
-* míček <micek@no-palka.ctu.cz>
-* stůl <stul@no-palka.ctu.cz>
+* Ilia Levankov <levanili@fel.cvut.cz>
+* Daniil Nikonenko <nikondan@fel.cvut.cz>
+* míček Sonya <micek@no-palka.ctu.cz>
+* stůl Jakov <stul@no-palka.ctu.cz>
 
 ## INFO - Jak nakládat s tímto repositářem
 1. Zachovejte strukturu: 
