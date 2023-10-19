@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace FtDCode.Player
 {
@@ -11,6 +12,11 @@ namespace FtDCode.Player
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+        }
+
+        private void Start()
+        {
+            
         }
 
         private void FixedUpdate()
