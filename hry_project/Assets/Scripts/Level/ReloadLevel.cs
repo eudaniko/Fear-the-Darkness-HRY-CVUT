@@ -1,10 +1,9 @@
-using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace FtDCode.Components
+namespace FtDCode.Level
 {
-    public class ReloadLevelComponent:MonoBehaviour
+    public class ReloadLevel:MonoBehaviour
     {
         public void Reload()
         {
