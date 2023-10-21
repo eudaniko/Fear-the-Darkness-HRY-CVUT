@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8958611748098778958}
   - component: {fileID: 8163480481790750788}
   - component: {fileID: 9017972823233616083}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &4834361128161761987
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -175,8 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44793790a09a7994188a79ddd5dd58b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 7
-  verticalSpeed: 3
+  horizontalSpeed: 12
+  verticalSpeed: 7
 --- !u!114 &8958611748098778958
 MonoBehaviour:
   m_ObjectHideFlags: 0

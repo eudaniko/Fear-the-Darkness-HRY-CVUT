@@ -1,6 +1,5 @@
 using FtDCode.Level;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace FtDCode.Player
 {
@@ -46,11 +45,8 @@ namespace FtDCode.Player
                 _otherToDisable = other;
                 Invoke(nameof(DisableOther), objectDisableTime); 
             }
-            
-
         }
-
-
+        
         private void DoReload()
         {
             _level.Reload();
