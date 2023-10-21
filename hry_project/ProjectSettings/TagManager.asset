@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Obstacles
   - SpiderWeb
+  - DeathWall
+  - DeathTriangle
+  - Box
   layers:
   - Default
   - TransparentFX
@@ -42,4 +45,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Obstacles
+    uniqueID: 979673997
+    locked: 0
+  - name: Player
+    uniqueID: 1070499985
+    locked: 0
+  - name: UI
+    uniqueID: 3903291569
     locked: 0

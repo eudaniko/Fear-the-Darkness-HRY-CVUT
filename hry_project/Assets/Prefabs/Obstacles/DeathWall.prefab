@@ -13,11 +13,10 @@ GameObject:
   - component: {fileID: 7866456396816615140}
   - component: {fileID: 1661323292064876376}
   - component: {fileID: 6855347475461424787}
-  - component: {fileID: 5220380138442386562}
-  - component: {fileID: 507173939769904430}
+  - component: {fileID: 6112567104781607666}
   m_Layer: 5
   m_Name: DeathWall
-  m_TagString: Untagged
+  m_TagString: DeathWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -75,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingLayerID: -391675727
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
     type: 3}
   m_Color: {r: 0.122641504, g: 0.02256141, b: 0.02256141, a: 1}
@@ -176,7 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 0
   verticalSpeed: 3
---- !u!114 &5220380138442386562
+--- !u!114 &6112567104781607666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -185,34 +184,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 6636112521014115036}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6df4b0bbc47b48fdb7e1493718e34ede, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: Player
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 507173939769904430}
-        m_TargetAssemblyTypeName: FtDCode.Components.ReloadLevelComponent, Assembly-CSharp
-        m_MethodName: Reload
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: -6666666
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &507173939769904430
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636112521014115036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 49161c5a768e4422affd45ead3975b46, type: 3}
+  m_Script: {fileID: 11500000, guid: ef771692d108f1243b2545cd120b9293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
