@@ -9,6 +9,7 @@ TagManager:
   - DeathWall
   - DeathTriangle
   - Box
+  - BossHead
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Player
   - Chunk
   - Obstacle
-  - 
+  - BossHead
   - 
   - 
   - 
