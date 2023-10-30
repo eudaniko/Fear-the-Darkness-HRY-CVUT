@@ -11,7 +11,7 @@ namespace FtDCode.Camera
 
         private void Awake()
         {
-            _offset = followedTransform.position.y;
+            _offset = followedTransform.position.y - transform.position.y;
             _position = transform.position;
         }
 
