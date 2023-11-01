@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8958611748098778958}
   - component: {fileID: 8163480481790750788}
   - component: {fileID: 9017972823233616083}
+  - component: {fileID: 7238662807939012809}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -80,13 +81,12 @@ SpriteRenderer:
   m_SortingLayerID: 1070499985
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: b8a10d12a6a0e4cb999479e32ab1606e, type: 3}
   m_Color: {r: 0.9125825, g: 0.57254905, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.2, y: 3.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -155,8 +155,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 2.1333334, y: 2.1333334}
+    newSize: {x: 3.2, y: 3.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -218,6 +218,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6b1498f6061d4796bddc47fabd4e5db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &7238662807939012809
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49928247921156905}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 67f9295ffdaae4879a3c32ff7c4f18c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4793797522219575606
 GameObject:
   m_ObjectHideFlags: 0
@@ -374,10 +395,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1070499985
   m_SortingLayer: 2
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
-    type: 3}
-  m_Color: {r: 1, g: 0.0916364, b: 0, a: 1}
+  m_SortingOrder: -1
+  m_Sprite: {fileID: 765975978, guid: 4ad69af28fdef40c2b06f384af8a21fe, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
