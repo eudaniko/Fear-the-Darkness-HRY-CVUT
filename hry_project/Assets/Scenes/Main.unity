@@ -698,8 +698,13 @@ PrefabInstance:
     - target: {fileID: 8163480481790750788, guid: f2bfbb71479d4464db36260709541e08,
         type: 3}
       propertyPath: time
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8163480481790750788, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1446568412}
     - target: {fileID: 8163480481790750788, guid: f2bfbb71479d4464db36260709541e08,
         type: 3}
       propertyPath: objectDisableTime

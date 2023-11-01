@@ -1,6 +1,5 @@
-using FtDCode.Level;
+using FtDCode.Core;
 using UnityEngine;
-
 
 namespace FtDCode.Player
 {
@@ -8,10 +7,10 @@ namespace FtDCode.Player
     {
         [SerializeField] private float deltaSpeed; 
         [SerializeField] private float time;
-        [SerializeField] private float objectDisableTime ; 
+        [SerializeField] private float objectDisableTime ;
+        [SerializeField] private ScenesManager gameManager;
 
         private PlayerMovement _player;
-        private ReloadLevel _level;
         private Collider2D _otherToDisable;
         
         private const string SlowingObstacle = "SpiderWeb";
@@ -23,14 +22,13 @@ namespace FtDCode.Player
         private void Awake()
         {
             _player = GetComponent<PlayerMovement>();
-            _level = GetComponent<ReloadLevel>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.CompareTag(DeathWall) || other.gameObject.CompareTag(DeathTriangle))
             {
-                Invoke(nameof(DoReload),objectDisableTime);
+                gameManager.LoadScene("GameOverMenu");
             }
 
             if (other.gameObject.CompareTag(Box))
@@ -46,11 +44,6 @@ namespace FtDCode.Player
                 _otherToDisable = other;
                 Invoke(nameof(DisableOther), objectDisableTime); 
             }
-        }
-
-        private void DoReload()
-        {
-            _level.Reload();
         }
 
         private void DisableOther( )
