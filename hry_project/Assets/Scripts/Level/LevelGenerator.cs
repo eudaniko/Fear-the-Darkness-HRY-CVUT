@@ -6,7 +6,7 @@ namespace FtDCode.Level
 {
     public class LevelGenerator : MonoBehaviour
     {
-        private const string ChunkFolderPath = "Prefabs/Level/Chunks/Game";
+        private const string ChunkFolderPath = "Chunks/Game";
         private const int InitialChunkCount = 2;
         private const int ActiveChunkCount = 3;
         private Transform _level;
