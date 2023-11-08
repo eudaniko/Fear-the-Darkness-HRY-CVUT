@@ -244,6 +244,7 @@ GameObject:
   - component: {fileID: 3218653680525308677}
   - component: {fileID: 6422789701519203911}
   - component: {fileID: 4417861184975759507}
+  - component: {fileID: 1348181653419691181}
   m_Layer: 13
   m_Name: Head
   m_TagString: DeathWall
@@ -372,6 +373,18 @@ Animation:
   m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &1348181653419691181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2962550015657099368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddf4fe10b1cfa5649a872ddebd6ef0fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3091392825808751388
 GameObject:
   m_ObjectHideFlags: 0
@@ -1005,7 +1018,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4e748696be12a408e1c82235f009a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  verticalSpeed: 3
+  defaltVerticalSpeed: 0
+  needTimeForResetBoss: 3
+  characterPosition: {fileID: 0}
 --- !u!1 &7077838481527159358
 GameObject:
   m_ObjectHideFlags: 0

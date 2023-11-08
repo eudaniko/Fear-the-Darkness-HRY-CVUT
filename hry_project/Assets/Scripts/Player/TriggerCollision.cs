@@ -5,60 +5,64 @@ namespace FtDCode.Player
 {
     public class TriggerCollision : MonoBehaviour
     {
-        [SerializeField] private float deltaSpeed; 
-        [SerializeField] private float time;
-        [SerializeField] private float objectDisableTime ;
-        [SerializeField] private ScenesManager gameManager;
-
-        private PlayerMovement _player;
-        private Collider2D _otherToDisable;
+         [SerializeField] private ScenesManager gameManager;
         
-        private const string SlowingObstacle = "SpiderWeb";
-        private const string DeathWall = "DeathWall";
-        private const string DeathTriangle = "DeathTriangle";
-        private const string Box = "Box";
+        private Animator _animator; 
+        
+        private PlayerMovement _player;
+        [SerializeField] private float deltaVerticalSlow;
+        [SerializeField] private float deltaHorizontalSlow;
+
+        private PlayerHealth _playerHealth;
+        [SerializeField] private float deltaWater;
+        
+        private static readonly string SlowingObstacle = "SpiderWeb";
+        private static readonly string DeathWall = "DeathWall";
+        private static readonly string DeathTriangle = "DeathTriangle";
+        private static readonly string Water = "Water";
         
         
         private void Awake()
         {
             _player = GetComponent<PlayerMovement>();
+            _animator = GetComponent<Animator>();
+            _playerHealth = GetComponent<PlayerHealth>();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.CompareTag(DeathWall) || other.gameObject.CompareTag(DeathTriangle))
-            {
-                gameManager.LoadScene("GameOverMenu");
-            }
-
-            if (other.gameObject.CompareTag(Box))
-            {
-                _otherToDisable = other;
-                Invoke(nameof(DisableOther), objectDisableTime);
-            }
-            
             if (other.gameObject.CompareTag(SlowingObstacle))
             {
-                SlowDown();
-                Invoke(nameof(ResetSpeed), time);
-                _otherToDisable = other;
-                Invoke(nameof(DisableOther), objectDisableTime); 
+                _animator.SetBool("isSlowed",true);
+            }
+            if (other.gameObject.CompareTag(Water))
+            {
+                _playerHealth.ChangeHpValue(deltaWater);
+                other.GetComponent<CircleCollider2D>().enabled = false;
             }
         }
+        
 
-        private void DisableOther( )
+        private void OnTriggerStay2D(Collider2D other)
         {
-            _otherToDisable.gameObject.SetActive(false);
+            if (other.gameObject.CompareTag(DeathWall) || other.gameObject.CompareTag(DeathTriangle))
+            {
+                gameManager.GameOver();
+            }
+            else if (other.gameObject.CompareTag(SlowingObstacle))
+            {
+                _player.ChangeVerticalSpeed(deltaVerticalSlow);
+                _player.ChangeHorizontalSpeed(deltaHorizontalSlow);
+            }
         }
-
-        private void SlowDown()
+        
+        private void OnTriggerExit2D(Collider2D other)
         {
-            _player.ChangeVerticalSpeed(deltaSpeed);
-        }
-
-        private void ResetSpeed()
-        {
-            _player.ChangeVerticalSpeed(-deltaSpeed);
+            if (other.gameObject.CompareTag(SlowingObstacle))
+            {
+                _player.ResetSpeed();
+                _animator.SetBool("isSlowed",false);
+            }
         }
         
     }
