@@ -128,7 +128,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 49928247921156905}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: a19d4d83c0d714d0b9e872cf80a491bb, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -151,7 +151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.058698654, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -162,7 +162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.506932, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &8441713132843563291
 MonoBehaviour:
@@ -177,7 +177,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalSpeed: 7
+  minHorizontalSpeed: 0
   verticalSpeed: 3
+  minVerticalSpeed: 0
 --- !u!114 &8958611748098778958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecd618ef79625c24e9ce68273963088b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
   hp: 0
+  torchLight: {fileID: 0}
 --- !u!114 &8163480481790750788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,10 +207,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8e11c7e440244408b19a8870e72d12a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deltaSpeed: -0.3
-  time: 1
-  objectDisableTime: 0
   gameManager: {fileID: 0}
+  deltaVerticalSlow: 0
+  deltaHorizontalSlow: 0
+  deltaWater: 0
 --- !u!114 &9017972823233616083
 MonoBehaviour:
   m_ObjectHideFlags: 0
