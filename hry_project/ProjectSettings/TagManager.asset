@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacles
+  - SpiderWeb
+  - DeathWall
+  - DeathTriangle
+  - Box
+  - BossHead
   layers:
   - Default
   - TransparentFX
@@ -15,10 +21,10 @@ TagManager:
   - 
   - PostProcessing
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Chunk
+  - Obstacle
+  - BossHead
   - 
   - 
   - 
@@ -40,4 +46,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Obstacles
+    uniqueID: 979673997
+    locked: 0
+  - name: Player
+    uniqueID: 1070499985
+    locked: 0
+  - name: Boss
+    uniqueID: 1459685961
+    locked: 0
+  - name: UI
+    uniqueID: 3903291569
     locked: 0
