@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7889326112713085042}
   - component: {fileID: 1193124342105711079}
   - component: {fileID: 2459227113785835471}
+  - component: {fileID: -4147851085500738393}
   m_Layer: 12
   m_Name: SpiderWeb
   m_TagString: SpiderWeb
@@ -120,3 +121,15 @@ CircleCollider2D:
   m_Offset: {x: -0.1, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &-4147851085500738393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3922348793439573206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86999104fa6830643a2eb02be6c1267b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
