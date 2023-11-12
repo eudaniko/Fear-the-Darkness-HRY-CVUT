@@ -10,6 +10,7 @@ TagManager:
   - DeathTriangle
   - Box
   - BossHead
+  - Water
   layers:
   - Default
   - TransparentFX
@@ -25,7 +26,7 @@ TagManager:
   - Chunk
   - Obstacle
   - BossHead
-  - 
+  - Torch
   - 
   - 
   - 
