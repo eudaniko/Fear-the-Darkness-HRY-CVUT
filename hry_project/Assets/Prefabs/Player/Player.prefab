@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4834361128161761987}
   - component: {fileID: 8441713132843563291}
   - component: {fileID: 8958611748098778958}
-  - component: {fileID: 8163480481790750788}
   - component: {fileID: 9017972823233616083}
   - component: {fileID: 7238662807939012809}
   m_Layer: 10
@@ -176,10 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44793790a09a7994188a79ddd5dd58b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 7
-  minHorizontalSpeed: 0
-  verticalSpeed: 3
-  minVerticalSpeed: 0
+  defaultHorizontalSpeed: 7
+  defaultVerticalSpeed: 3
 --- !u!114 &8958611748098778958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,24 +190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  hp: 0
+  maxHp: 3
   torchLight: {fileID: 0}
---- !u!114 &8163480481790750788
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 49928247921156905}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e11c7e440244408b19a8870e72d12a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  deltaVerticalSlow: 0
-  deltaHorizontalSlow: 0
-  deltaWater: 0
 --- !u!114 &9017972823233616083
 MonoBehaviour:
   m_ObjectHideFlags: 0

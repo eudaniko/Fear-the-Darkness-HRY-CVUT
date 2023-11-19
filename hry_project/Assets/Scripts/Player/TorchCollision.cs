@@ -18,7 +18,6 @@ namespace FtDCode.Player
         {
             var interactable = other.gameObject.GetComponent<IInteractable>();
             if (interactable == null || _torchSpeed.HorizontalSpeed < speedToInteract) return;
-            Debug.Log("collision!");
             interactable.Interact();
         }
     }

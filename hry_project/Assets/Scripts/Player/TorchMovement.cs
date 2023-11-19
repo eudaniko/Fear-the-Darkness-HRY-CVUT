@@ -79,8 +79,7 @@ namespace FtDCode.Player
 
         private float NormalizeDistance(float distance)
         {
-            if (IsMouseInTorchArea(distance))
-                return distance;
+            if (IsMouseInTorchArea(distance)) return distance;
             var middle = (torchZoneRadius - deadZoneRadius) / 2;
             return distance > middle ? torchZoneRadius : deadZoneRadius;
         }

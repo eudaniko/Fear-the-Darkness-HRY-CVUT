@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace FtDCode.Obstacle
 {
-    public class Destructible : MonoBehaviour, IInteractable
+    public class DestructibleObstacle : MonoBehaviour, IInteractable
     {
         public void Interact()
         {
