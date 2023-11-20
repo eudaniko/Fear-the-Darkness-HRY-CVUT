@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5459706261317686704}
   - component: {fileID: 157614091481883622}
-  - component: {fileID: 8324735024547147605}
+  - component: {fileID: 5070541908558661862}
+  - component: {fileID: 3530791645000960022}
   m_Layer: 12
-  m_Name: DeathTriangle
+  m_Name: DeathHole
   m_TagString: DeathTriangle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -85,8 +86,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &8324735024547147605
-CircleCollider2D:
+--- !u!70 &5070541908558661862
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -114,9 +115,21 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.05, y: 0.13}
-  serializedVersion: 2
-  m_Radius: 0.16
+  m_Offset: {x: 0, y: 0.15}
+  m_Size: {x: 0.5, y: 0.8}
+  m_Direction: 0
+--- !u!114 &3530791645000960022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7296843617627263591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e100e13ea9b3d4bb27222e0d2ebd07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
