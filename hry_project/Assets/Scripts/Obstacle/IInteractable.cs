@@ -4,6 +4,6 @@ namespace FtDCode.Obstacle
 {
     public interface IInteractable
     {
-        public void Interact();
+        public void Interact(GameObject player);
     }
 }

@@ -1,8 +1,10 @@
-﻿namespace FtDCode.Obstacle
+﻿using UnityEngine;
+
+namespace FtDCode.Obstacle
 {
     public class BurningObstacle : IInteractable 
     {
-        public void Interact()
+        public void Interact(GameObject player)
         {
             
         }
