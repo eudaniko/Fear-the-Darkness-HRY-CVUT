@@ -28,8 +28,8 @@ TagManager:
   - BossHead
   - Torch
   - NonphysicalObstacle
-  - 
-  - 
+  - Wall
+  - Trigger
   - 
   - 
   - 
