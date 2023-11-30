@@ -1,3 +1,4 @@
+using FtDCode.Core;
 using UnityEngine;
 
 namespace FtDCode.Player
@@ -13,8 +14,7 @@ namespace FtDCode.Player
         private float _sectorRightBorder;
         private float _sectorLeftBorder;
         private UnityEngine.Camera _mainCamera;
-
-
+        
         private void Awake()
         {
             CalculateBorders();
@@ -56,8 +56,7 @@ namespace FtDCode.Player
 
         private float CalculateMouseAngle()
         {
-            var mouseDirection = (_playerPosition - _mousePosition).normalized;
-            var angle = Mathf.Repeat(Mathf.Atan2(mouseDirection.y, mouseDirection.x) * Mathf.Rad2Deg + 90, 360);
+            var angle = AngleCalculator.CalculateAngle(_playerPosition, _mousePosition);
             return NormalizeAngle(angle);
         }
 
