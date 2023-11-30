@@ -426,6 +426,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 6668575068237933783, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1446568412}
     - target: {fileID: 8133354314399547627, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: m_IsTrigger

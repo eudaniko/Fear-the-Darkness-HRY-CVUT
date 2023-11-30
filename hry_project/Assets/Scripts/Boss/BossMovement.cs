@@ -27,7 +27,7 @@ namespace FtDCode.Boss
         private void FixedUpdate()
         {
             MoveRigidbody();
-            /*actualDistance = Math.Round(Math.Abs(bossPosition.position.y - characterPosition.position.y));
+            actualDistance = Math.Round(Math.Abs(bossPosition.position.y - characterPosition.position.y));
             if (actualDistance < defaltBossDistance && lastDistance == actualDistance)
             {
                 lastDistance = actualDistance;
@@ -42,7 +42,7 @@ namespace FtDCode.Boss
                 ResetBossSpeed();
                 lastDistance = actualDistance;
                 _deltaTime = 0;
-            }*/
+            }
         }
 
         private void MoveRigidbody()
