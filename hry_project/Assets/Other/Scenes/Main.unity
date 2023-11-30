@@ -316,6 +316,11 @@ PrefabInstance:
       propertyPath: defaultVerticalSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1348181653419691181, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1472623176079875766, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: m_SortingLayer
@@ -420,6 +425,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8133354314399547627, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7762746807480400048, guid: 492f1147312f48f429caf4ca80306e07, type: 3}
