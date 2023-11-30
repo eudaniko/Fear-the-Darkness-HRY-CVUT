@@ -358,6 +358,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3218653680525308677, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3218653680525308677, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
       propertyPath: m_SortingLayer
       value: 3
       objectReference: {fileID: 0}
@@ -436,8 +441,13 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9087333388365001783, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: playerTransform
+      value: 
+      objectReference: {fileID: 1626777410}
     m_RemovedComponents:
-    - {fileID: 7762746807480400048, guid: 492f1147312f48f429caf4ca80306e07, type: 3}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

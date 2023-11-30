@@ -4,16 +4,22 @@ namespace FtDCode.Core
 {
     public class AngleCalculator : MonoBehaviour
     {
+        private const float AngleShift = 90;
+        private const float FullCirceAngle = 360;
         public static float CalculateAngle(Vector2 centerPosition, Vector2 otherPosition)
         {
             var direction = (centerPosition - otherPosition).normalized;
-            return UnityToTrigonometric(Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg);
+            return Mathf.Repeat(Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg, 360);
         }
         
-        //shifts angle to match trigonometrical standards
-        private static float UnityToTrigonometric(float angle)
+        public static float UnityToTrigonometric(float angle)
         {
-            return Mathf.Repeat(angle + 90, 360);
+            return Mathf.Repeat(angle + AngleShift, FullCirceAngle);
+        }
+        
+        public static float TrigonometricToUnity(float angle)
+        {
+            return Mathf.Repeat(angle - AngleShift, FullCirceAngle);
         }
         
     }

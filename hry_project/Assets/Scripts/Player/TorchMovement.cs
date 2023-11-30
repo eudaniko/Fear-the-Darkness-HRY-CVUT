@@ -57,7 +57,7 @@ namespace FtDCode.Player
         private float CalculateMouseAngle()
         {
             var angle = AngleCalculator.CalculateAngle(_playerPosition, _mousePosition);
-            return NormalizeAngle(angle);
+            return NormalizeAngle(AngleCalculator.UnityToTrigonometric(angle));
         }
 
         private bool IsMouseInTorchArea(float distance)
