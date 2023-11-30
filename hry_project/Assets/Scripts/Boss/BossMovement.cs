@@ -1,11 +1,12 @@
 using UnityEngine;
 using System;
+using UnityEngine.Serialization;
 
 namespace FtDCode.Boss
 {
     public class BossMovement : MonoBehaviour
     {
-        [SerializeField] private float defaltVerticalSpeed;
+        [SerializeField] private float defaultVerticalSpeed;
         private float verticalSpeed;
         private float defaltBossDistance;
         private double lastDistance;
@@ -18,7 +19,7 @@ namespace FtDCode.Boss
 
         private void Awake()
         {
-            verticalSpeed = defaltVerticalSpeed;
+            verticalSpeed = defaultVerticalSpeed;
             _rigidbody = GetComponent<Rigidbody2D>();
             bossPosition = GetComponent<Transform>();
             defaltBossDistance = Math.Abs(bossPosition.position.y - characterPosition.position.y);
@@ -27,7 +28,7 @@ namespace FtDCode.Boss
         private void FixedUpdate()
         {
             MoveRigidbody();
-            actualDistance = Math.Round(Math.Abs(bossPosition.position.y - characterPosition.position.y));
+            /*actualDistance = Math.Round(Math.Abs(bossPosition.position.y - characterPosition.position.y));
             if (actualDistance < defaltBossDistance && lastDistance == actualDistance)
             {
                 lastDistance = actualDistance;
@@ -42,7 +43,7 @@ namespace FtDCode.Boss
                 ResetBossSpeed();
                 lastDistance = actualDistance;
                 _deltaTime = 0;
-            }
+            }*/
         }
 
         private void MoveRigidbody()
@@ -60,7 +61,7 @@ namespace FtDCode.Boss
 
         private void ResetBossSpeed()
         {
-            verticalSpeed = defaltVerticalSpeed;
+            verticalSpeed = defaultVerticalSpeed;
         }
     }
 }
