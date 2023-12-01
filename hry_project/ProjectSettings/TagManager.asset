@@ -21,7 +21,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
+  - BurningObstacle
   - Player
   - Chunk
   - Obstacle
@@ -30,7 +30,7 @@ TagManager:
   - NonphysicalObstacle
   - Wall
   - Trigger
-  - 
+  - Boss
   - 
   - 
   - 

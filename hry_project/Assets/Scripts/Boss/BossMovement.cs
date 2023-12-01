@@ -5,7 +5,7 @@ namespace FtDCode.Boss
 {
     public class BossMovement : MonoBehaviour
     {
-        [SerializeField] private float defaltVerticalSpeed;
+        [SerializeField] private float defaultVerticalSpeed;
         private float verticalSpeed;
         private float defaltBossDistance;
         private double lastDistance;
@@ -18,7 +18,7 @@ namespace FtDCode.Boss
 
         private void Awake()
         {
-            verticalSpeed = defaltVerticalSpeed;
+            verticalSpeed = defaultVerticalSpeed;
             _rigidbody = GetComponent<Rigidbody2D>();
             bossPosition = GetComponent<Transform>();
             defaltBossDistance = Math.Abs(bossPosition.position.y - characterPosition.position.y);
@@ -60,7 +60,7 @@ namespace FtDCode.Boss
 
         private void ResetBossSpeed()
         {
-            verticalSpeed = defaltVerticalSpeed;
+            verticalSpeed = defaultVerticalSpeed;
         }
     }
 }
