@@ -6,7 +6,9 @@ namespace FtDCode.Level
 {
     public class LevelGenerator : MonoBehaviour
     {
+        [SerializeField] private bool useTestChunks;
         private const string ChunkFolderPath = "Chunks/Game";
+        private const string TestFolderPath = "Chunks/Test";
         private const int InitialChunkCount = 2;
         private const int ActiveChunkCount = 3;
         private Transform _level;
@@ -17,7 +19,7 @@ namespace FtDCode.Level
 
         private void Awake()
         {
-            _allChunks = Resources.LoadAll(ChunkFolderPath);
+            _allChunks = useTestChunks ? Resources.LoadAll(TestFolderPath) : Resources.LoadAll(ChunkFolderPath);
             _level = transform.parent;
             InitializeQueues();
         }

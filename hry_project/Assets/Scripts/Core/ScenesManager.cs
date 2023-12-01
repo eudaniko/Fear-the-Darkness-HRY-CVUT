@@ -16,6 +16,11 @@ namespace FtDCode.Core
             Time.timeScale = 1;
         }
 
+        public static void FinishRun()
+        {
+            SceneManager.LoadScene(mainMenuScene);
+        }
+
         public void GameOver()
         {
             LoadScene(gameOverScene);

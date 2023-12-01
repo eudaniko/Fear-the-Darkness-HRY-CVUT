@@ -1,14 +1,15 @@
+using FtDCode.Core;
 using UnityEngine;
 
 namespace FtDCode.Obstacle
 {
     public class MovingObstacle : MonoBehaviour
     {
-        [SerializeField] float speed;
+        [SerializeField] private float speed;
         private const int ObstacleLayer = 12;
         private Rigidbody2D _rigidbody;
         
-        private void OnEnable()
+        private void Start()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
             _rigidbody.velocity = FindVelocityByDirection();
@@ -16,8 +17,9 @@ namespace FtDCode.Obstacle
 
         private Vector2 FindVelocityByDirection()
         {
-            var direction = transform.rotation.eulerAngles.z + 90;
-            return new Vector2(Mathf.Cos(direction * Mathf.Deg2Rad), Mathf.Sin(direction * Mathf.Deg2Rad)) * speed;
+            var direction = AngleCalculator.UnityToTrigonometric(transform.rotation.eulerAngles.z);
+            return new Vector2(Mathf.Cos(direction * Mathf.Deg2Rad), 
+                Mathf.Sin(direction * Mathf.Deg2Rad)) * speed;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
