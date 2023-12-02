@@ -7,9 +7,9 @@ namespace FtDCode.Boss
     {
         [SerializeField] private float defaultVerticalSpeed;
         private float verticalSpeed;
-        private float defaltBossDistance;
-        private double lastDistance;
-        private double actualDistance;
+        private float defaultBossDistance;
+        private float lastDistance;
+        private float actualDistance;
         private Rigidbody2D _rigidbody;
         private Transform bossPosition;
         [SerializeField] private float needTimeForResetBoss = 6f;
@@ -21,14 +21,14 @@ namespace FtDCode.Boss
             verticalSpeed = defaultVerticalSpeed;
             _rigidbody = GetComponent<Rigidbody2D>();
             bossPosition = GetComponent<Transform>();
-            defaltBossDistance = Math.Abs(bossPosition.position.y - characterPosition.position.y);
+            defaultBossDistance = Mathf.Abs(bossPosition.position.y - characterPosition.position.y);
         }
 
         private void FixedUpdate()
         {
             MoveRigidbody();
-            actualDistance = Math.Round(Math.Abs(bossPosition.position.y - characterPosition.position.y));
-            if (actualDistance < defaltBossDistance && lastDistance == actualDistance)
+            actualDistance = Mathf.Round(Mathf.Abs(bossPosition.position.y - characterPosition.position.y));
+            if (actualDistance < defaultBossDistance && lastDistance == actualDistance)
             {
                 lastDistance = actualDistance;
                 _deltaTime += Time.deltaTime;
@@ -42,6 +42,15 @@ namespace FtDCode.Boss
                 ResetBossSpeed();
                 lastDistance = actualDistance;
                 _deltaTime = 0;
+            }
+            else if (actualDistance > defaultBossDistance && lastDistance == actualDistance)
+            {
+                lastDistance = actualDistance;
+                _deltaTime += Time.deltaTime;
+                if (_deltaTime >= needTimeForResetBoss)
+                {
+                    ChangeBossSpeed(0.02f);
+                }
             }
         }
 
@@ -61,6 +70,11 @@ namespace FtDCode.Boss
         private void ResetBossSpeed()
         {
             verticalSpeed = defaultVerticalSpeed;
+        }
+
+        public void SlowDownBoss(float slowedSpeed)
+        {
+            verticalSpeed = slowedSpeed;
         }
     }
 }
