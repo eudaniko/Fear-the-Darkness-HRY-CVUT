@@ -6,15 +6,28 @@ namespace FtDCode.Player
     {
         [SerializeField] private float defaultHorizontalSpeed;
         [SerializeField] private float defaultVerticalSpeed;
+        [SerializeField] private bool isJumping;
+        public bool IsJumping => isJumping;
+        private static readonly int Jump = Animator.StringToHash("Jump");
         private float _horizontalSpeed;
         private float _verticalSpeed;
         private Rigidbody2D _rigidbody;
+        private Animator _animator;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody2D>();
+            _animator = GetComponent<Animator>();
             _horizontalSpeed = defaultHorizontalSpeed;
             _verticalSpeed = defaultVerticalSpeed;
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                _animator.SetTrigger(Jump);
+            }
         }
 
         private void FixedUpdate()
