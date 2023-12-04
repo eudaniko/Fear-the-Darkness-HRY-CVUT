@@ -40,8 +40,6 @@ namespace FtDCode.Boss
         private void CheckDistanceAndUpdateState()
         {
             float actualDistance = Mathf.Abs(_bossPosition.position.y - characterPosition.position.y);
-            UnityEngine.Debug.Log(actualDistance);
-            UnityEngine.Debug.Log(_currentState);
             switch (_currentState)
             {
                 case BossState.Stable:
@@ -57,7 +55,6 @@ namespace FtDCode.Boss
                 case BossState.Retreating:
                     if (_deltaTime >= needTimeForResetBoss)
                     {
-                        UnityEngine.Debug.Log("Change speed");
                         AdjustBossSpeed();
                         _deltaTime = 0;
                     }
@@ -66,8 +63,6 @@ namespace FtDCode.Boss
                         UpdateState(BossState.Stable);
                         ResetBossSpeed();
                     }
-
-                    UnityEngine.Debug.Log(_deltaTime);
                     _deltaTime += Time.deltaTime;
                     break;
             }

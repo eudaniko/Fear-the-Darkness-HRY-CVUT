@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3530791645000960022}
   m_Layer: 12
   m_Name: DeathHole
-  m_TagString: DeathTriangle
+  m_TagString: DeathHole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
