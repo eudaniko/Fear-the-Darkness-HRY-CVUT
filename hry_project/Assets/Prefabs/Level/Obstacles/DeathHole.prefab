@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5459706261317686704}
   - component: {fileID: 157614091481883622}
   - component: {fileID: 5070541908558661862}
-  - component: {fileID: 3530791645000960022}
+  - component: {fileID: 2632827327226630269}
   m_Layer: 12
   m_Name: DeathHole
   m_TagString: DeathHole
@@ -121,7 +121,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.15}
   m_Size: {x: 0.5, y: 0.8}
   m_Direction: 0
---- !u!114 &3530791645000960022
+--- !u!114 &2632827327226630269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,6 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7296843617627263591}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e100e13ea9b3d4bb27222e0d2ebd07, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ee3759f6fd05e847b8cc7853551e619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
