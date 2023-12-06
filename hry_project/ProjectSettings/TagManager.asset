@@ -7,10 +7,11 @@ TagManager:
   - Obstacles
   - SpiderWeb
   - DeathWall
-  - DeathTriangle
   - Box
   - BossHead
   - Water
+  - DeathHole
+  - DeathTriangle
   layers:
   - Default
   - TransparentFX
