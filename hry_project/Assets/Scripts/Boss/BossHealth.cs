@@ -19,7 +19,7 @@ namespace FtDCode.Boss
             hp -= points;
             if (hp <= 0)
             {
-                gameManager.GameOver();
+                ScenesManager.FinishRun();
             }
         }
     }

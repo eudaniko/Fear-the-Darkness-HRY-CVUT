@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useTestChunks: 0
   initialChunkCount: 2
-  activeChunkCount: 7
+  activeChunkCount: 3
