@@ -7,10 +7,10 @@ namespace FtDCode.Level
     public class LevelGenerator : MonoBehaviour
     {
         [SerializeField] private bool useTestChunks;
+        [SerializeField] private int initialChunkCount;
+        [SerializeField] private int activeChunkCount;
         private const string ChunkFolderPath = "Chunks/Game";
         private const string TestFolderPath = "Chunks/Test";
-        private const int InitialChunkCount = 2;
-        private const int ActiveChunkCount = 3;
         private Transform _level;
         private Object[] _allChunks;
         private float _currentChunkPosition;
@@ -41,7 +41,7 @@ namespace FtDCode.Level
                 _inactiveChunks.Enqueue((GameObject)chunk);
             }
 
-            for (var i = 0; i < InitialChunkCount; i++)
+            for (var i = 0; i < initialChunkCount; i++)
             {
                 SpawnChunk(_inactiveChunks.Dequeue());
             }
@@ -49,7 +49,7 @@ namespace FtDCode.Level
         
         private void ShiftChunks()
         {
-            if (_activeChunks.Count >= ActiveChunkCount)
+            if (_activeChunks.Count >= activeChunkCount)
             {
                 DespawnChunk(_activeChunks.Dequeue());
             }
