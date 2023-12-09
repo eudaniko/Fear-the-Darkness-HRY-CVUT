@@ -711,6 +711,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4275720854118908185, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: smoothTime
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 4432953410447960323, guid: f2bfbb71479d4464db36260709541e08,
         type: 3}
       propertyPath: trailWidth

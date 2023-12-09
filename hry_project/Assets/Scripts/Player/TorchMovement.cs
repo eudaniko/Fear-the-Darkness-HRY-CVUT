@@ -8,13 +8,17 @@ namespace FtDCode.Player
         [SerializeField] private float deadZoneRadius;
         [SerializeField] private float torchZoneRadius;
         [SerializeField] private float torchSectorAngle;
+        [SerializeField] private float smoothTime = 0.1f;
+
         private Transform _playerTransform;
         private Vector2 _mousePosition;
         private Vector2 _playerPosition;
+        private Vector2 _velocity = Vector2.zero;
         private float _sectorRightBorder;
         private float _sectorLeftBorder;
         private UnityEngine.Camera _mainCamera;
-        
+        private Vector2 _targetPosition;
+
         private void Awake()
         {
             CalculateBorders();
@@ -45,7 +49,9 @@ namespace FtDCode.Player
             var angle = CalculateMouseAngle();
             var distance = CalculateDistance();
 
-            SetTorchPosition(distance, angle);
+            _targetPosition = CalculateTorchPosition(distance, angle);
+
+            transform.position = Vector2.SmoothDamp(transform.position, _targetPosition, ref _velocity, smoothTime);
         }
 
         private float CalculateDistance()
@@ -83,10 +89,10 @@ namespace FtDCode.Player
             return distance > middle ? torchZoneRadius : deadZoneRadius;
         }
 
-        private void SetTorchPosition(float distance, float angle)
+        private Vector2 CalculateTorchPosition(float distance, float angle)
         {
-            var direction = new Vector3(-Mathf.Sin(angle * Mathf.Deg2Rad), Mathf.Cos(angle * Mathf.Deg2Rad), 0);
-            transform.position = (Vector3) _playerPosition + distance * direction;
+            var direction = new Vector2(-Mathf.Sin(angle * Mathf.Deg2Rad), Mathf.Cos(angle * Mathf.Deg2Rad));
+            return _playerPosition + distance * direction;
         }
     }
 }
