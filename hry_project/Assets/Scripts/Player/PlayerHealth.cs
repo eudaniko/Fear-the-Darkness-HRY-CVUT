@@ -1,33 +1,34 @@
 using UnityEngine;
 using FtDCode.Core;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 namespace FtDCode.Player
 {
     public class PlayerHealth : MonoBehaviour
     {
-        [SerializeField] private ScenesManager gameManager;
-        [SerializeField] private float maxHp;
+        [SerializeField] private ScenesManager gameManager; 
         [SerializeField] private Light2D torchLight;
-        private float _currentHp;
+        [SerializeField] private float defaultHp;
+        public float currentHp;
 
         private void Awake()
         {
-            torchLight.intensity = maxHp;
-            _currentHp = maxHp;
+            torchLight.intensity = defaultHp;
+            currentHp = defaultHp;
         }
 
         public void DecreaseHpByOnePoint()
         {
-            _currentHp--;
-            torchLight.intensity = _currentHp;
-            if (_currentHp <= 0) gameManager.GameOver();
+            currentHp--;
+            torchLight.intensity = currentHp;
+            if (currentHp <= 0) gameManager.GameOver();
         }
 
         public void SetHpToMax()
         {
-            _currentHp = maxHp;
-            torchLight.intensity = _currentHp;
+            currentHp = defaultHp;
+            torchLight.intensity = currentHp;
         }
 
         public void Kill()
