@@ -38,12 +38,7 @@ namespace FtDCode.Obstacle
         private void Update()
         {
             if (!_isMoving) return;
-            if (!MovePlayer()) StopMovement();
-        }
-
-        private void StopMovement()
-        {
-            TogglePlayerMovingState(false);
+            if (!MovePlayer()) TogglePlayerMovingState(false);
         }
 
         private bool MovePlayer()

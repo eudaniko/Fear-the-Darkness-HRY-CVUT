@@ -4,11 +4,11 @@ namespace FtDCode.Obstacle
 {
     public class MovingObstacleTrigger : MonoBehaviour
     {
-        [SerializeField] private GameObject minion;
+        [SerializeField] private MovingObstacle minion;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            minion.SetActive(true);
+            minion.enabled = true;
         }
     }
 }
