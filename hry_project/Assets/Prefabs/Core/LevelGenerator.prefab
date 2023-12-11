@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef771692d108f1243b2545cd120b9293, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  level: {fileID: 0}
+  useTestChunks: 0
+  initialChunkCount: 2
+  activeChunkCount: 3

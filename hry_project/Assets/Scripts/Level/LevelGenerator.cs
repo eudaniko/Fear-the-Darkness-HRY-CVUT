@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -6,9 +7,12 @@ namespace FtDCode.Level
 {
     public class LevelGenerator : MonoBehaviour
     {
+        [SerializeField] private bool useTestChunks;
+        [SerializeField] private int initialChunkCount;
+        [SerializeField] private int activeChunkCount;
+        public static int LastCheckpoint = 0;
         private const string ChunkFolderPath = "Chunks/Game";
-        private const int InitialChunkCount = 2;
-        private const int ActiveChunkCount = 3;
+        private const string TestFolderPath = "Chunks/Test";
         private Transform _level;
         private Object[] _allChunks;
         private float _currentChunkPosition;
@@ -17,7 +21,7 @@ namespace FtDCode.Level
 
         private void Awake()
         {
-            _allChunks = Resources.LoadAll(ChunkFolderPath);
+            _allChunks = useTestChunks ? Resources.LoadAll(TestFolderPath) : Resources.LoadAll(ChunkFolderPath);
             _level = transform.parent;
             InitializeQueues();
         }
@@ -32,28 +36,27 @@ namespace FtDCode.Level
             LevelChunk.OnChunkChange -= ShiftChunks;
         }
 
-        private void InitializeQueues()
-        {
-            foreach (var chunk in _allChunks)
-            {
-                _inactiveChunks.Enqueue((GameObject)chunk);
-            }
-
-            for (var i = 0; i < InitialChunkCount; i++)
-            {
-                SpawnChunk(_inactiveChunks.Dequeue());
-            }
-        }
-        
         private void ShiftChunks()
         {
-            if (_activeChunks.Count >= ActiveChunkCount)
+            if (_activeChunks.Count >= activeChunkCount)
             {
                 DespawnChunk(_activeChunks.Dequeue());
             }
             
             var newChunk = _inactiveChunks.Dequeue();
             SpawnChunk(newChunk);
+        }
+
+        private void InitializeQueues()
+        {
+            for (var i = LastCheckpoint; i < _allChunks.Length; i++)
+            {
+                _inactiveChunks.Enqueue((GameObject)_allChunks[i]);
+            }
+            for (var i = 0; i < initialChunkCount; i++)
+            {
+                SpawnChunk(_inactiveChunks.Dequeue());
+            }
         }
 
         private void SpawnChunk(GameObject chunk)

@@ -1,66 +1,104 @@
 using UnityEngine;
-using System;
+
 
 namespace FtDCode.Boss
 {
     public class BossMovement : MonoBehaviour
     {
-        [SerializeField] private float defaltVerticalSpeed;
-        private float verticalSpeed;
-        private float defaltBossDistance;
-        private double lastDistance;
-        private double actualDistance;
+        [SerializeField] private float defaltDistance;
+        [SerializeField] private float defaltVertivalSpeed;
+        private float _deltaVerticalSpeed ;
+        [SerializeField] private float slowingBossDelta;
         private Rigidbody2D _rigidbody;
-        private Transform bossPosition;
-        [SerializeField] private float needTimeForResetBoss = 6f;
-        private float _deltaTime;
+        private Transform _bossPosition;
         [SerializeField] private Transform characterPosition;
+        [SerializeField] private float needTimeForResetBoss;
+        private float _deltaTime;
+        private BossState _currentState;
+
+        private enum BossState { Approaching, Retreating, Stable }
 
         private void Awake()
         {
-            verticalSpeed = defaltVerticalSpeed;
+            _deltaVerticalSpeed = defaltVertivalSpeed;
             _rigidbody = GetComponent<Rigidbody2D>();
-            bossPosition = GetComponent<Transform>();
-            defaltBossDistance = Math.Abs(bossPosition.position.y - characterPosition.position.y);
+            _bossPosition = transform;
+            _currentState = BossState.Stable;
         }
 
         private void FixedUpdate()
         {
             MoveRigidbody();
-            actualDistance = Math.Round(Math.Abs(bossPosition.position.y - characterPosition.position.y));
-            if (actualDistance < defaltBossDistance && lastDistance == actualDistance)
-            {
-                lastDistance = actualDistance;
-                _deltaTime += Time.deltaTime;
-                if (_deltaTime >= needTimeForResetBoss)
-                {
-                    ChangeBossSpeed(-0.02f);
-                }
-            }
-            else if(lastDistance != actualDistance)
-            {
-                ResetBossSpeed();
-                lastDistance = actualDistance;
-                _deltaTime = 0;
-            }
+            CheckDistanceAndUpdateState();
         }
 
         private void MoveRigidbody()
         {
-            _rigidbody.velocity = new Vector2(0, verticalSpeed);
+            _rigidbody.velocity = new Vector2(0, _deltaVerticalSpeed);
+        }
+
+        private void CheckDistanceAndUpdateState()
+        {
+            float actualDistance = Mathf.Abs(_bossPosition.position.y - characterPosition.position.y);
+            switch (_currentState)
+            {
+                case BossState.Stable:
+                    if (actualDistance > defaltDistance)
+                    {
+                        UpdateState(BossState.Stable);
+                    }
+                    else if (actualDistance < defaltDistance)
+                    {
+                        UpdateState(BossState.Retreating);
+                    }
+                    break;
+                case BossState.Retreating:
+                    if (_deltaTime >= needTimeForResetBoss)
+                    {
+                        AdjustBossSpeed();
+                        _deltaTime = 0;
+                    }
+                    else if (actualDistance > defaltDistance)
+                    {
+                        UpdateState(BossState.Stable);
+                        ResetBossSpeed();
+                    }
+                    _deltaTime += Time.deltaTime;
+                    break;
+            }
+        }
+
+        private void UpdateState(BossState newState)
+        {
+            _currentState = newState;
+            _deltaTime = 0; // Reset timer when state changes
+        }
+
+        private void AdjustBossSpeed()
+        {
+            if (_currentState == BossState.Approaching)
+            {
+                ChangeBossSpeed(+slowingBossDelta);
+            }
+            else if (_currentState == BossState.Retreating)
+            {
+                ChangeBossSpeed(-slowingBossDelta);
+            }
         }
 
         private void ChangeBossSpeed(float deltaSpeed)
         {
-            if (verticalSpeed >= 0)
-            {
-                verticalSpeed += deltaSpeed;
-            }
+            _deltaVerticalSpeed += deltaSpeed;
         }
 
-        private void ResetBossSpeed()
+        public void ResetBossSpeed()
         {
-            verticalSpeed = defaltVerticalSpeed;
+            _deltaVerticalSpeed = defaltVertivalSpeed;
+        }
+
+        public void SlowDownBoss(float slowedSpeed)
+        {
+            _deltaVerticalSpeed = slowedSpeed;
         }
     }
 }

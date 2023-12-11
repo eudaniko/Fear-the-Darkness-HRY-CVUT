@@ -24,7 +24,8 @@ namespace FtDCode.Obstacle
             _playerMovement = other.GetComponent<PlayerMovement>();
             _playerCollider = other.GetComponent<Collider2D>();
             _playerTransform = other.transform;
-            if (_playerMovement == null || _playerCollider == null || _playerTransform == null) return;
+            if (_playerMovement == null || _playerCollider == null || _playerTransform == null 
+                || !_playerMovement.IsJumping) return;
             StartMovement();
         }
 
@@ -37,12 +38,7 @@ namespace FtDCode.Obstacle
         private void Update()
         {
             if (!_isMoving) return;
-            if (!MovePlayer()) StopMovement();
-        }
-
-        private void StopMovement()
-        {
-            TogglePlayerMovingState(false);
+            if (!MovePlayer()) TogglePlayerMovingState(false);
         }
 
         private bool MovePlayer()

@@ -1,12 +1,38 @@
-﻿using UnityEngine;
+﻿using FtDCode.Boss;
+using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace FtDCode.Obstacle
 {
-    public class BurningObstacle : IInteractable 
+    public class BurningObstacle : MonoBehaviour, IInteractable
     {
+        [SerializeField] private float damage;
+        [SerializeField] private float slowing;
+        private Collider2D _burningCollider;
+        private Light2D _light;
+        private SpriteRenderer _sprite;
+
+        private void Awake()
+        {
+            _burningCollider = transform.GetChild(0).gameObject.GetComponent<Collider2D>();
+            _light = transform.GetChild(1).gameObject.GetComponent<Light2D>();
+            _sprite = GetComponent<SpriteRenderer>();
+        }
+
         public void Interact(GameObject player)
         {
-            
+            _burningCollider.enabled = true;
+            _light.enabled = true;
+            _sprite.color = Color.red;
+        }
+        
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            var bossHealth = other.gameObject.GetComponent<BossHealth>();
+            var bossSpeed = other.gameObject.GetComponentInParent<BossMovement>();
+            if (bossHealth == null || bossSpeed == null) return;
+            bossHealth.TakeDamage(damage);
+            bossSpeed.SlowDownBoss(slowing);
         }
     }
 }

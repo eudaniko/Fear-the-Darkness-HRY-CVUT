@@ -5,9 +5,10 @@ namespace FtDCode.Core
 {
     public class ScenesManager : MonoBehaviour
     {
-        private static string gameOverScene = "GameOverMenu";
-        private static string mainScene = "Main";
-        private static string mainMenuScene = "MainMenu";
+        private const string GameOverScene = "GameOverMenu";
+        private const string MainScene = "Main";
+        private const string MainMenuScene = "MainMenu";
+        private const string VictoryMenuScene = "VictoryMenu";
 
 
         public void LoadScene(string sceneName)
@@ -16,19 +17,24 @@ namespace FtDCode.Core
             Time.timeScale = 1;
         }
 
+        public static void FinishRun()
+        {
+            SceneManager.LoadScene(VictoryMenuScene);
+        }
+
         public void GameOver()
         {
-            LoadScene(gameOverScene);
+            LoadScene(GameOverScene);
         }
 
         public void StartGame()
         {
-            LoadScene(mainScene);
+            LoadScene(MainScene);
         }
 
         public void BackToMainMenu()
         {
-            LoadScene(mainMenuScene);
+            LoadScene(MainMenuScene);
         }
 
         public void QuitGame()
