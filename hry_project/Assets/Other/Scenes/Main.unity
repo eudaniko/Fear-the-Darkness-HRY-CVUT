@@ -220,12 +220,12 @@ PrefabInstance:
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
       propertyPath: activeChunkCount
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
       propertyPath: initialChunkCount
-      value: 8
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2860735880949495217, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
