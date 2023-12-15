@@ -1164,9 +1164,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b4e748696be12a408e1c82235f009a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultVerticalSpeed: 0
-  needTimeForResetBoss: 3
+  defaltDistance: 0
+  defaltVertivalSpeed: 0
+  slowingBossDelta: 0
   characterPosition: {fileID: 0}
+  needTimeForResetBoss: 3
 --- !u!1 &7077838481527159358
 GameObject:
   m_ObjectHideFlags: 0
