@@ -1,3 +1,4 @@
+using FtDCode.Level;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -35,6 +36,11 @@ namespace FtDCode.Core
         public void BackToMainMenu()
         {
             LoadScene(MainMenuScene);
+        }
+        
+        public void ResetProgress()
+        {
+            PlayerPrefs.DeleteAll();
         }
 
         public void QuitGame()

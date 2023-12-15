@@ -497,6 +497,31 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: LoadScene
       objectReference: {fileID: 0}
+    - target: {fileID: 3613597252061773162, guid: c34d442f190bb4637b9651e745b1f414,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 3885771868848347100, guid: c34d442f190bb4637b9651e745b1f414,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 108
+      objectReference: {fileID: 0}
+    - target: {fileID: 4607273777399543793, guid: c34d442f190bb4637b9651e745b1f414,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1087053567}
+    - target: {fileID: 4607273777399543793, guid: c34d442f190bb4637b9651e745b1f414,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetProgress
+      objectReference: {fileID: 0}
+    - target: {fileID: 5230975764790573856, guid: c34d442f190bb4637b9651e745b1f414,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 108
+      objectReference: {fileID: 0}
     - target: {fileID: 6078965941742633030, guid: c34d442f190bb4637b9651e745b1f414,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode

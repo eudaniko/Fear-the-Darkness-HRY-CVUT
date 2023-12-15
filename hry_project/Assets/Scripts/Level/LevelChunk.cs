@@ -14,7 +14,7 @@ namespace FtDCode.Level
 
         private void Awake()
         {
-            if (LevelGenerator.LastCheckpoint == number)
+            if (LevelGenerator.LastCheckpointNumber == number)
             {
                 GetComponent<Collider2D>().enabled = false;
             }
@@ -25,7 +25,7 @@ namespace FtDCode.Level
         {
             OnChunkChange?.Invoke();
             if (!isCheckpoint) return;
-            LevelGenerator.LastCheckpoint = number;
+            LevelGenerator.LastCheckpointNumber = number;
         }
     }
 }

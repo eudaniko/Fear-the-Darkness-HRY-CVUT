@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -10,9 +9,10 @@ namespace FtDCode.Level
         [SerializeField] private bool useTestChunks;
         [SerializeField] private int initialChunkCount;
         [SerializeField] private int activeChunkCount;
-        public static int LastCheckpoint = 0;
+        public static int LastCheckpointNumber;
         private const string ChunkFolderPath = "Chunks/Game";
         private const string TestFolderPath = "Chunks/Test";
+        private const string CheckpointPref = "Chekpoint";
         private Transform _level;
         private Object[] _allChunks;
         private float _currentChunkPosition;
@@ -23,6 +23,7 @@ namespace FtDCode.Level
         {
             _allChunks = useTestChunks ? Resources.LoadAll(TestFolderPath) : Resources.LoadAll(ChunkFolderPath);
             _level = transform.parent;
+            LastCheckpointNumber = PlayerPrefs.GetInt(CheckpointPref, 0);
             InitializeQueues();
         }
 
@@ -33,6 +34,7 @@ namespace FtDCode.Level
 
         private void OnDisable()
         {
+            PlayerPrefs.SetInt(CheckpointPref, LastCheckpointNumber);
             LevelChunk.OnChunkChange -= ShiftChunks;
         }
 
@@ -49,7 +51,7 @@ namespace FtDCode.Level
 
         private void InitializeQueues()
         {
-            for (var i = LastCheckpoint; i < _allChunks.Length; i++)
+            for (var i = LastCheckpointNumber; i < _allChunks.Length; i++)
             {
                 _inactiveChunks.Enqueue((GameObject)_allChunks[i]);
             }
