@@ -56,7 +56,7 @@ namespace FtDCode.Player
 
             }
         }
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerStay2D(Collider2D other)
         {
             var interactable = other.gameObject.GetComponent<IInteractable>();
             if (interactable == null || _torchSpeed.HorizontalSpeed < speedToInteract) return;

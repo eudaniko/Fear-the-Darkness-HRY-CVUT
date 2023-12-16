@@ -12,6 +12,7 @@ TagManager:
   - Water
   - DeathHole
   - DeathTriangle
+  - Torch
   layers:
   - Default
   - TransparentFX
