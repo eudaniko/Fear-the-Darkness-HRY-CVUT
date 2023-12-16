@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6546794910698018520}
   - component: {fileID: 5472940600470883085}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 8405646003837348515}
   - component: {fileID: 6161531019525125311}
   - component: {fileID: 1670715186515226707}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Enter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +240,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3234526754827246564}
-  m_Layer: 12
+  m_Layer: 19
   m_Name: Rope
   m_TagString: Untagged
   m_Icon: {fileID: 0}
