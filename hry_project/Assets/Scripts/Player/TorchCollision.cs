@@ -26,11 +26,16 @@ namespace FtDCode.Player
         [SerializeField] private float lightIntensityDecrease = 0.2f;
         private Light2D _trailLight;
 
+        [Header("Audio Settings")]
+        [SerializeField] private AudioClip[] _audioClips;
+        private AudioSource _audioSource;
+
         private void Start()
         {
             _torchSpeed = GetComponent<TorchSpeed>();
             _trailRenderer = GetComponent<TrailRenderer>();
             _trailLight = GetComponent<Light2D>();
+            _audioSource = GetComponent<AudioSource>();
             _player = transform.parent.gameObject;
             _emission = _particleSystem.emission;
         }
@@ -40,6 +45,8 @@ namespace FtDCode.Player
             if (_torchSpeed.HorizontalSpeed > speedToInteract) {
                 _trailRenderer.startWidth = Mathf.Min(_trailRenderer.endWidth + trailWidth, 1);
                 _trailLight.intensity = Mathf.Min(_trailLight.intensity + lightIntensityIncrease, 1);
+                _audioSource.clip = _audioClips[Random.Range(0, _audioClips.Length)];
+                _audioSource.Play();
                 if (_emission.rateOverDistanceMultiplier <= defaultParticleRateMultiplier)
                 {
                     _emission.rateOverDistanceMultiplier = particleRateInInteractMultiplier;
