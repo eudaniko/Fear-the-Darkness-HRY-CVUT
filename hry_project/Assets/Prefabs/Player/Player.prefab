@@ -193,8 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   torchLight: {fileID: 8288292693462357454}
-  defaultHp: 2
-  currentHp: 2
+  currentHp: 3
 --- !u!114 &9017972823233616083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -413,8 +412,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.2}
-  m_Size: {x: 0.7, y: 3}
+  m_Offset: {x: 0, y: 0.4}
+  m_Size: {x: 3.5, y: 4.5}
   m_Direction: 0
 --- !u!96 &8659881192246585720
 TrailRenderer:
@@ -704,6 +703,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1593881018531093159}
     m_Modifications:
+    - target: {fileID: 333181899527026349, guid: de4b3edd20a834a63b9d653530141438,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 333181899527026349, guid: de4b3edd20a834a63b9d653530141438,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: 1070499985
+      objectReference: {fileID: 0}
+    - target: {fileID: 333181899527026349, guid: de4b3edd20a834a63b9d653530141438,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 749891345413583331, guid: de4b3edd20a834a63b9d653530141438,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6888786044094131778, guid: de4b3edd20a834a63b9d653530141438,
         type: 3}
       propertyPath: m_Name

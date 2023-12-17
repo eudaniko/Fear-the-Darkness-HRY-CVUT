@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 
@@ -6,6 +7,8 @@ namespace FtDCode.Boss
     public class BossMovement : MonoBehaviour
     {
         [SerializeField] private float defaltDistance;
+        [SerializeField] private float attackDistance;
+        public static bool BossAttack;
         [SerializeField] private float defaltVertivalSpeed;
         private float _deltaVerticalSpeed ;
         [SerializeField] private float slowingBossDelta;
@@ -16,7 +19,7 @@ namespace FtDCode.Boss
         private float _deltaTime;
         private BossState _currentState;
 
-        private enum BossState { Approaching, Retreating, Stable }
+        private enum BossState { Approaching, Retreating, Stable}
 
         private void Awake()
         {
@@ -43,11 +46,15 @@ namespace FtDCode.Boss
             switch (_currentState)
             {
                 case BossState.Stable:
-                    if (actualDistance > defaltDistance)
+                    if (BossAttack)
+                    {
+                        UpdateState(BossState.Approaching);
+                    }
+                    else if (actualDistance >= defaltDistance)
                     {
                         UpdateState(BossState.Stable);
                     }
-                    else if (actualDistance < defaltDistance)
+                    else if (actualDistance < defaltDistance && !BossAttack)
                     {
                         UpdateState(BossState.Retreating);
                     }
@@ -58,12 +65,26 @@ namespace FtDCode.Boss
                         AdjustBossSpeed();
                         _deltaTime = 0;
                     }
-                    else if (actualDistance > defaltDistance)
+                    else if (actualDistance >= defaltDistance)
                     {
                         UpdateState(BossState.Stable);
+                        BossAttack = false;
                         ResetBossSpeed();
                     }
                     _deltaTime += Time.deltaTime;
+                    break;
+                case BossState.Approaching:
+                    if (actualDistance > attackDistance)
+                    {
+                        AdjustBossSpeed();
+                    }
+                    else if (actualDistance <= attackDistance)
+                    {
+                        UpdateState(BossState.Stable);
+                        BossAttack = true;
+                        ResetBossSpeed();
+                    }
+
                     break;
             }
         }

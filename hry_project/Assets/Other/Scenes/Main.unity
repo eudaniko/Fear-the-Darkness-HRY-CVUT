@@ -431,9 +431,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
+      propertyPath: attackDistance
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: defaltDistance
+      value: 8.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
       propertyPath: characterPosition
       value: 
       objectReference: {fileID: 1626777410}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: needTimeForResetBoss
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5462892060103872077, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -494,6 +509,16 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1446568412}
+    - target: {fileID: 7077838481527159358, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087333388365001783, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9087333388365001783, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: playerTransform
@@ -631,66 +656,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6777263562317601299, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 3.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6777263562317601299, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 4.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6777263562317601299, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[0]
-      value: 1070499985
-      objectReference: {fileID: 0}
-    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[1]
-      value: 979673997
-      objectReference: {fileID: 0}
-    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[2]
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_ApplyToSortingLayers.Array.data[3]
-      value: 979673997
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958611748098778958, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: currentHp
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8958611748098778958, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: defaultHp
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 8958611748098778958, guid: f2bfbb71479d4464db36260709541e08,
         type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1446568412}
-    - target: {fileID: 9075451791711916672, guid: f2bfbb71479d4464db36260709541e08,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
