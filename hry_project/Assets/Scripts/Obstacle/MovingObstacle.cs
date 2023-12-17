@@ -24,7 +24,7 @@ namespace FtDCode.Obstacle
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.gameObject.layer != ObstacleLayer) return;
+            if (other.gameObject.layer != ObstacleLayer || _rigidbody == null) return;
             _rigidbody.velocity = Vector2.zero;
         }
     }

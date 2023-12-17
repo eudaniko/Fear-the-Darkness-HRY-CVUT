@@ -14,6 +14,7 @@ namespace FtDCode.Level
 
         private void Awake()
         {
+            _trigger = GetComponent<Collider2D>();
             if (LevelGenerator.LastCheckpointNumber == number)
             {
                 GetComponent<Collider2D>().enabled = false;
@@ -24,6 +25,7 @@ namespace FtDCode.Level
         private void OnTriggerEnter2D(Collider2D other)
         {
             OnChunkChange?.Invoke();
+            _trigger.enabled = false;
             if (!isCheckpoint) return;
             LevelGenerator.LastCheckpointNumber = number;
         }
