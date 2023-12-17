@@ -7,6 +7,7 @@ namespace FtDCode.Boss
     {
         [SerializeField] private float hp;
         [SerializeField] private ScenesManager gameManager;
+        [SerializeField] private ScreenShake screenShake;
         
         public void ChangeHpValue(float newHp)
         {
@@ -15,12 +16,14 @@ namespace FtDCode.Boss
         
         public void TakeDamage(float points)
         {
+            if(screenShake == null) return;
+            screenShake.ShakeScreen();
             //TODO: add animation
-            hp -= points;
+            /*hp -= points;
             if (hp <= 0)
             {
                 ScenesManager.FinishRun();
-            }
+            }*/
         }
     }
 }
