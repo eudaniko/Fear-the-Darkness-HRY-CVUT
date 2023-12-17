@@ -431,13 +431,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
+      propertyPath: DeltaSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
       propertyPath: attackDistance
       value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: defaltDistance
-      value: 8.5
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: defaultDistance
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
@@ -446,8 +456,23 @@ PrefabInstance:
       objectReference: {fileID: 1626777410}
     - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
+      propertyPath: TimeToResetDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: defaultVerticalSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: defaultVertivalSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
       propertyPath: needTimeForResetBoss
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5462892060103872077, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}

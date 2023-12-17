@@ -1,13 +1,16 @@
-﻿using FtDCode.Boss;
+﻿using System;
+using FtDCode.Boss;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 namespace FtDCode.Obstacle
 {
     public class BurningObstacle : MonoBehaviour, IInteractable
     {
         [SerializeField] private float damage;
-        [SerializeField] private float slowing;
+        [SerializeField] private float slowedSpeed;
+        [SerializeField] private float slowingTime;
         private Collider2D _burningCollider;
         private GameObject _light;
         private SpriteRenderer _sprite;
@@ -18,6 +21,7 @@ namespace FtDCode.Obstacle
             _light = transform.GetChild(1).gameObject;
             _sprite = GetComponent<SpriteRenderer>();
         }
+        
 
         public void Interact(GameObject player)
         {
@@ -31,7 +35,7 @@ namespace FtDCode.Obstacle
             var bossSpeed = other.gameObject.GetComponentInParent<BossMovement>();
             if (bossHealth == null || bossSpeed == null) return;
             bossHealth.TakeDamage(damage);
-            bossSpeed.SlowDownBoss(slowing);
+            bossSpeed.SlowDownBoss(slowedSpeed, slowingTime);
         }
     }
 }

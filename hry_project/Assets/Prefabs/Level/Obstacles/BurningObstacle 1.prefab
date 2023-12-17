@@ -265,7 +265,7 @@ MonoBehaviour:
   - {x: 0.7455899, y: -0.8766181, z: 0}
   m_ShapePathHash: 904896702
   m_Mesh: {fileID: 0}
-  m_InstanceId: 1213618
+  m_InstanceId: 1257816
   m_LocalBounds:
     m_Center: {x: 0.0020974874, y: -0.2551679, z: 0}
     m_Extent: {x: 0.7554041, y: 0.6214504, z: 0}
@@ -282,7 +282,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 0
-  slowing: 0
+  slowedSpeed: 0
+  slowingTime: 1
 --- !u!1001 &352973426163967938
 PrefabInstance:
   m_ObjectHideFlags: 0

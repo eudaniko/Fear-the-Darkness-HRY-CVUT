@@ -402,7 +402,7 @@ PrefabInstance:
     - target: {fileID: 6676299258319120041, guid: 25b14fcfb93f2e44db08629ee6b3182d,
         type: 3}
       propertyPath: m_InstanceId
-      value: -6460436
+      value: -6809068
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -556,6 +556,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BossAttackTrigger (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8321112229679309972, guid: a3c9ad73532295a43b0f9468c9d7501f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8451690508875798711, guid: a3c9ad73532295a43b0f9468c9d7501f,
         type: 3}
