@@ -9,21 +9,20 @@ namespace FtDCode.Obstacle
         [SerializeField] private float damage;
         [SerializeField] private float slowing;
         private Collider2D _burningCollider;
-        private Light2D _light;
+        private GameObject _light;
         private SpriteRenderer _sprite;
 
         private void Awake()
         {
             _burningCollider = transform.GetChild(0).gameObject.GetComponent<Collider2D>();
-            _light = transform.GetChild(1).gameObject.GetComponent<Light2D>();
+            _light = transform.GetChild(1).gameObject;
             _sprite = GetComponent<SpriteRenderer>();
         }
 
         public void Interact(GameObject player)
         {
             _burningCollider.enabled = true;
-            _light.enabled = true;
-            _sprite.color = Color.red;
+            _light.SetActive(true);
         }
         
         private void OnTriggerEnter2D(Collider2D other)

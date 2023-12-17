@@ -1,11 +1,10 @@
-using System;
-using System.IO.Pipes;
 using UnityEngine;
 
 namespace FtDCode.Boss
 {
     public class HeadAttack : MonoBehaviour
     {
+        public static bool IsEnabled;
         private Transform _headTransform;
         private Animation _headAnimation;
 
@@ -16,7 +15,7 @@ namespace FtDCode.Boss
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (!enabled) return;
+            if (!IsEnabled) return;
             Attack();
         }
 

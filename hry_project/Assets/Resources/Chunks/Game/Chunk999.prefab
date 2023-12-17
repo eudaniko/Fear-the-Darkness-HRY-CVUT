@@ -352,6 +352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604c7bf82029fb445b93a8f5b6203256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  number: 0
+  isCheckpoint: 0
   length: 30
 --- !u!1001 &2480679749240521208
 PrefabInstance:

@@ -1,7 +1,6 @@
 using UnityEngine;
 using FtDCode.Core;
 using UnityEngine.Rendering.Universal;
-using UnityEngine.Serialization;
 
 namespace FtDCode.Player
 {
