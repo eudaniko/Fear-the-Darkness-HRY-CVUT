@@ -221,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
       propertyPath: useTestChunks
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
@@ -630,6 +630,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[0]
+      value: 1070499985
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[1]
+      value: 979673997
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[2]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.data[3]
+      value: 979673997
       objectReference: {fileID: 0}
     - target: {fileID: 8958611748098778958, guid: f2bfbb71479d4464db36260709541e08,
         type: 3}
