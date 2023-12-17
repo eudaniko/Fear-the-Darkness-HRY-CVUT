@@ -738,6 +738,31 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1446568412}
+    - target: {fileID: 2416050580094983926, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434682280639969202, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434682280639969202, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1446568411}
+    - target: {fileID: 2434682280639969202, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434682280639969202, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FtDCode.Core.PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2790883575849524834, guid: cfb4caf2dea6c43478d3539ef90b136d,
         type: 3}
       propertyPath: m_Name
