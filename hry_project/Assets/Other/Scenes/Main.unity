@@ -221,7 +221,7 @@ PrefabInstance:
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
       propertyPath: useTestChunks
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
@@ -631,6 +631,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6777263562317601299, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777263562317601299, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6777263562317601299, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 8288292693462357454, guid: f2bfbb71479d4464db36260709541e08,
         type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
@@ -658,9 +673,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8958611748098778958, guid: f2bfbb71479d4464db36260709541e08,
         type: 3}
+      propertyPath: currentHp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958611748098778958, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: defaultHp
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958611748098778958, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1446568412}
+    - target: {fileID: 9075451791711916672, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
