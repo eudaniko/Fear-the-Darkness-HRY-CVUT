@@ -10,6 +10,7 @@ namespace FtDCode.Boss
 
         private void Start()
         {
+            IsEnabled = false;
             _headAnimation = gameObject.GetComponentInParent<Animation>();
         }
 

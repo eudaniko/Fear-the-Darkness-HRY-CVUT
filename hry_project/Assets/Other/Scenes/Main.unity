@@ -431,9 +431,49 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
+      propertyPath: DeltaSpeed
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: attackDistance
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: defaltDistance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: defaultDistance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
       propertyPath: characterPosition
       value: 
       objectReference: {fileID: 1626777410}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: TimeToResetDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: defaultVerticalSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: defaultVertivalSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: needTimeForResetBoss
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5462892060103872077, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -494,11 +534,16 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1446568412}
-    - target: {fileID: 6668575068237933783, guid: 492f1147312f48f429caf4ca80306e07,
+    - target: {fileID: 7077838481527159358, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
-      propertyPath: screenShake
-      value: 
-      objectReference: {fileID: 2059824492}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9087333388365001783, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9087333388365001783, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: playerTransform
