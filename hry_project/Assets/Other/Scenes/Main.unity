@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311924, g: 0.38073963, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -494,6 +494,11 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 1446568412}
+    - target: {fileID: 6668575068237933783, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: screenShake
+      value: 
+      objectReference: {fileID: 2059824492}
     - target: {fileID: 9087333388365001783, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: playerTransform
@@ -708,6 +713,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4135062492631609664}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2059824492 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4140776717096729241, guid: 3bc04dbe9138a4a4fbc02a9df08b9836,
+    type: 3}
+  m_PrefabInstance: {fileID: 4135062492631609664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3670e56227cad4a48a890e98d2634d0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &725317281259961099
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -721,6 +738,31 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1446568412}
+    - target: {fileID: 2416050580094983926, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434682280639969202, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434682280639969202, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1446568411}
+    - target: {fileID: 2434682280639969202, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 2434682280639969202, guid: cfb4caf2dea6c43478d3539ef90b136d,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FtDCode.Core.PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2790883575849524834, guid: cfb4caf2dea6c43478d3539ef90b136d,
         type: 3}
       propertyPath: m_Name
@@ -884,6 +926,16 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140776717096729241, guid: 3bc04dbe9138a4a4fbc02a9df08b9836,
+        type: 3}
+      propertyPath: decreaseFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140776717096729241, guid: 3bc04dbe9138a4a4fbc02a9df08b9836,
+        type: 3}
+      propertyPath: initialShakeForce
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 4221973192431276298, guid: 3bc04dbe9138a4a4fbc02a9df08b9836,
         type: 3}
