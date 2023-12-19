@@ -42,7 +42,7 @@ namespace FtDCode.Player
 
         private void FixedUpdate()
         {
-            if (_torchSpeed.HorizontalSpeed > speedToInteract) {
+            /*if (_torchSpeed.HorizontalSpeed > speedToInteract) {
                 _trailRenderer.startWidth = Mathf.Min(_trailRenderer.endWidth + trailWidth, 1);
                 _trailLight.intensity = Mathf.Min(_trailLight.intensity + lightIntensityIncrease, 1);
                 _audioSource.clip = _audioClips[Random.Range(0, _audioClips.Length)];
@@ -61,7 +61,7 @@ namespace FtDCode.Player
                     _emission.rateOverDistanceMultiplier = defaultParticleRateMultiplier;
                 }
 
-            }
+            }*/
         }
         private void OnTriggerStay2D(Collider2D other)
         {

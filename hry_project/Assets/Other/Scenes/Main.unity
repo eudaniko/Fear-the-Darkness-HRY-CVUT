@@ -509,6 +509,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 6636112521014115036, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6668575068237933783, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: gameManager
@@ -593,6 +598,11 @@ PrefabInstance:
         type: 3}
       propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].outWeight
       value: 0.23305152
+      objectReference: {fileID: 0}
+    - target: {fileID: 8402769456229762230, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9087333388365001783, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
@@ -735,9 +745,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2887970080557158846, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: volumeMultiplayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446946730511230288, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6446946730511230288, guid: f2bfbb71479d4464db36260709541e08,
         type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6446946730511230288, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c078ec8ce19d97c4386709a7183a43e8, type: 3}
+    - target: {fileID: 6446946730511230288, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795854100461690541, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8795854100461690541, guid: f2bfbb71479d4464db36260709541e08,
+        type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8958611748098778958, guid: f2bfbb71479d4464db36260709541e08,
