@@ -9,16 +9,19 @@ namespace FtDCode.Boss
     {
         [SerializeField] private float defaultDistance;
         [SerializeField] private float attackDistance;
+        private float _actualDistance;
         public static bool BossAttack;
         [SerializeField] private float defaultVerticalSpeed;
         private float _deltaVerticalSpeed;
-        [SerializeField] private float DeltaSpeed;
+       [SerializeField] private float deltaSpeed;
         private Rigidbody2D _rigidbody;
         private Transform _bossPosition;
         [SerializeField] private Transform characterPosition;
         [SerializeField] private float TimeToResetDistance;
         private float _deltaTime;
         private BossState _currentState;
+        [SerializeField] private AudioClip[] _audioClips;
+        private AudioSource _audioSource;
 
         private enum BossState { Approaching, Retreating, Stable, Attack }
 
@@ -28,6 +31,7 @@ namespace FtDCode.Boss
             _rigidbody = GetComponent<Rigidbody2D>();
             _bossPosition = transform;
             _currentState = BossState.Stable;
+            _audioSource = GetComponent<AudioSource>();
         }
 
         private void Start()
@@ -39,7 +43,24 @@ namespace FtDCode.Boss
         {
             MoveRigidbody();
             CheckDistanceAndUpdateState();
+            
+             if (_actualDistance <= attackDistance)
+             {
+                 _audioSource.clip = _audioClips[1];
+                 _audioSource.Play();
+             }
+            else if (_actualDistance <= defaultDistance)
+            {
+                _audioSource.clip = _audioClips[0];
+                _audioSource.Play();
+            }
+            else if (_actualDistance > defaultDistance+1)
+            {
+                _audioSource.Stop();
+            }
         }
+        
+
 
         private void MoveRigidbody()
         {
@@ -48,16 +69,16 @@ namespace FtDCode.Boss
 
         private void CheckDistanceAndUpdateState()
         {
-            float actualDistance = Mathf.Abs(_bossPosition.position.y - characterPosition.position.y);
+            _actualDistance = Mathf.Abs(_bossPosition.position.y - characterPosition.position.y);
             switch (_currentState)
             {
                 case BossState.Stable:
                     if (BossAttack) UpdateState(BossState.Attack);   
-                    else if (actualDistance < defaultDistance) UpdateState(BossState.Retreating);
-                    else if (actualDistance >= defaultDistance)UpdateState(BossState.Approaching);
+                    else if (_actualDistance < defaultDistance) UpdateState(BossState.Retreating);
+                    else if (_actualDistance >= defaultDistance)UpdateState(BossState.Approaching);
                     break;
                 case BossState.Attack:
-                    if (actualDistance > attackDistance)_deltaVerticalSpeed += DeltaSpeed; // Speed up
+                    if (_actualDistance > attackDistance)_deltaVerticalSpeed += deltaSpeed; // Speed up
                     else ResetBossSpeed();
                     if (!BossAttack)
                     {
@@ -72,10 +93,10 @@ namespace FtDCode.Boss
                     _deltaTime += Time.deltaTime;
                     if (_deltaTime >= TimeToResetDistance)
                     {
-                        _deltaVerticalSpeed -= DeltaSpeed; // Slow down
+                        _deltaVerticalSpeed -= deltaSpeed; // Slow down
                         _deltaTime = 0;
                     }
-                    if (actualDistance >= defaultDistance)
+                    if (_actualDistance >= defaultDistance)
                     {
                         UpdateState(BossState.Stable);
                         BossAttack = false;
@@ -86,12 +107,12 @@ namespace FtDCode.Boss
                 case BossState.Approaching:
                     if (BossAttack) UpdateState(BossState.Attack);   
                     _deltaTime += Time.deltaTime;
-                    if (actualDistance > defaultDistance && _deltaTime >= TimeToResetDistance)
+                    if (_actualDistance > defaultDistance && _deltaTime >= TimeToResetDistance)
                     {
-                        _deltaVerticalSpeed += DeltaSpeed; // Speed up
+                        _deltaVerticalSpeed += deltaSpeed; // Speed up
                         _deltaTime = 0;
                     }
-                    if (actualDistance <= defaultDistance )
+                    if (_actualDistance <= defaultDistance )
                     {
                         UpdateState(BossState.Stable);
                         ResetBossSpeed();

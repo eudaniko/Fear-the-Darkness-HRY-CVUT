@@ -6,8 +6,8 @@ namespace FtDCode.Obstacle
 {
     public class DestructibleObstacle : MonoBehaviour, IInteractable
     {
-        private static readonly int Destroy = Animator.StringToHash("Destroy");
         private Animator _animator;
+        private static readonly int Destroy1 = Animator.StringToHash("Destroy");
         private const string FireLight = "FireLight";
 
         private void Start()
@@ -19,7 +19,7 @@ namespace FtDCode.Obstacle
         {
             if (_animator != null)
             {
-                _animator.SetTrigger(Destroy);
+                _animator.SetTrigger(Destroy1);
                 Transform childTransform = transform.Find(FireLight);
                 if (childTransform != null) childTransform.gameObject.SetActive(true);
                 StartCoroutine(DestroyAfterAnimation());
