@@ -431,24 +431,34 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
-      propertyPath: characterPosition
-      value: 
-      objectReference: {fileID: 1626777410}
-    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
-        type: 3}
-      propertyPath: _audioClips.Array.size
-      value: 2
+      propertyPath: deltaSpeed
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
-      propertyPath: _audioClips.Array.data[0]
+      propertyPath: characterPosition
       value: 
-      objectReference: {fileID: 8300000, guid: 5fd93e132e4264790ae6e665f3290c25, type: 3}
-    - target: {fileID: 483651642840347581, guid: 492f1147312f48f429caf4ca80306e07,
+      objectReference: {fileID: 1626777410}
+    - target: {fileID: 1366872145346595664, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
-      propertyPath: _audioClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: e316c8d32b27f43c1bc24e72fba0b8fc, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1366872145346595664, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696770178880000505, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: Priority
+      value: 223
+      objectReference: {fileID: 0}
+    - target: {fileID: 1696770178880000505, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 5462892060103872077, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -514,6 +524,16 @@ PrefabInstance:
       propertyPath: screenShake
       value: 
       objectReference: {fileID: 2059824492}
+    - target: {fileID: 6977219164450942869, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].time
+      value: 0.9617737
+      objectReference: {fileID: 0}
+    - target: {fileID: 6977219164450942869, guid: 492f1147312f48f429caf4ca80306e07,
+        type: 3}
+      propertyPath: rolloffCustomCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9087333388365001783, guid: 492f1147312f48f429caf4ca80306e07,
         type: 3}
       propertyPath: playerTransform
