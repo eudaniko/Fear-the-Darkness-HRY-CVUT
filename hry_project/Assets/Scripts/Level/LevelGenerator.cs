@@ -10,7 +10,7 @@ namespace FtDCode.Level
         [SerializeField] private int initialChunkCount;
         [SerializeField] private int activeChunkCount;
         public static int LastCheckpointNumber;
-        private const string ChunkFolderPath = "Chunks/Yakov";
+        private const string ChunkFolderPath = "Chunks/Game";
         private const string TestFolderPath = "Chunks/Test";
         private const string CheckpointPref = "Chekpoint";
         private Transform _level;
