@@ -45,8 +45,8 @@ namespace FtDCode.Player
             if (_torchSpeed.HorizontalSpeed > speedToInteract) {
                 _trailRenderer.startWidth = Mathf.Min(_trailRenderer.endWidth + trailWidth, 1);
                 _trailLight.intensity = Mathf.Min(_trailLight.intensity + lightIntensityIncrease, 1);
-                _audioSource.clip = _audioClips[Random.Range(0, _audioClips.Length)];
-                _audioSource.Play();
+                /*_audioSource.clip = _audioClips[Random.Range(0, _audioClips.Length)];
+                _audioSource.Play();*/
                 if (_emission.rateOverDistanceMultiplier <= defaultParticleRateMultiplier)
                 {
                     _emission.rateOverDistanceMultiplier = particleRateInInteractMultiplier;

@@ -512,7 +512,7 @@ MonoBehaviour:
   defaultDistance: 9
   attackDistance: 7.5
   defaultVerticalSpeed: 5
-  deltaSpeed: 0.3
+  deltaSpeed: 0.2
   characterPosition: {fileID: 0}
   TimeToResetDistance: 1
   _audioClips:
@@ -528,15 +528,15 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5fd93e132e4264790ae6e665f3290c25, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e316c8d32b27f43c1bc24e72fba0b8fc, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 256
+  Priority: 223
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

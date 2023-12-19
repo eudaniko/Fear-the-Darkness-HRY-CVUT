@@ -44,20 +44,23 @@ namespace FtDCode.Boss
             MoveRigidbody();
             CheckDistanceAndUpdateState();
             
-             if (_actualDistance <= attackDistance)
+            
+            
+             /*if (_actualDistance <= attackDistance)
              {
                  _audioSource.clip = _audioClips[1];
                  _audioSource.Play();
              }
             else if (_actualDistance <= defaultDistance)
             {
+                _audioSource.Stop();
                 _audioSource.clip = _audioClips[0];
                 _audioSource.Play();
             }
             else if (_actualDistance > defaultDistance+1)
             {
                 _audioSource.Stop();
-            }
+            }*/
         }
         
 

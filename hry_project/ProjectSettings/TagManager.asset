@@ -50,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Floor
+    uniqueID: 3998422539
+    locked: 0
   - name: Obstacles
     uniqueID: 979673997
     locked: 0
