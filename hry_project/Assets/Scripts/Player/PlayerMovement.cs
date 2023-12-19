@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using FtDCode.Core;
+using UnityEngine;
 
 namespace FtDCode.Player
 {
@@ -13,6 +14,7 @@ namespace FtDCode.Player
         private float _verticalSpeed;
         private Rigidbody2D _rigidbody;
         private Animator _animator;
+        private float _reducingValue = 0f;
 
         private void Awake()
         {
@@ -24,6 +26,18 @@ namespace FtDCode.Player
 
         private void Update()
         {
+            if (_reducingValue > 0)
+            {
+                if (_verticalSpeed <= 0)
+                {
+                    _animator.speed = 0f;
+                    _verticalSpeed = 0f;
+                    ScenesManager.FinishRun();
+                    //enabled = false;
+                }
+                ReduceSpeed();
+                return;
+            }
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _animator.SetTrigger(Jump);
@@ -60,6 +74,17 @@ namespace FtDCode.Player
         public void ResetVerticalSpeed()
         {
             _verticalSpeed = defaultVerticalSpeed;
+        }
+        
+        private void ReduceSpeed()
+        {
+            _verticalSpeed -= _reducingValue * Time.deltaTime;
+        }
+
+        public void StartFinishSequence(float value)
+        {
+            _reducingValue = value;
+            _horizontalSpeed = 0;
         }
     }
 }
