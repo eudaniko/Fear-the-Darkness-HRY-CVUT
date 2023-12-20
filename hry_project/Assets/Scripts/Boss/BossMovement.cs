@@ -9,8 +9,10 @@ namespace FtDCode.Boss
     {
         [SerializeField] private float defaultDistance;
         [SerializeField] private float attackDistance;
+        [SerializeField] private HeadRotation headRotation;
+        [SerializeField] private HeadAttack headAttack;
         private float _actualDistance;
-        public static bool BossAttack;
+        private bool _bossAttack;
         [SerializeField] private float defaultVerticalSpeed;
         private float _deltaVerticalSpeed;
        [SerializeField] private float deltaSpeed;
@@ -36,7 +38,7 @@ namespace FtDCode.Boss
 
         private void Start()
         {
-            BossAttack = false;
+            _bossAttack = false;
         }
 
         private void FixedUpdate()
@@ -76,14 +78,14 @@ namespace FtDCode.Boss
             switch (_currentState)
             {
                 case BossState.Stable:
-                    if (BossAttack) UpdateState(BossState.Attack);   
+                    if (_bossAttack) UpdateState(BossState.Attack);   
                     else if (_actualDistance < defaultDistance) UpdateState(BossState.Retreating);
                     else if (_actualDistance >= defaultDistance)UpdateState(BossState.Approaching);
                     break;
                 case BossState.Attack:
                     if (_actualDistance > attackDistance)_deltaVerticalSpeed += deltaSpeed; // Speed up
                     else ResetBossSpeed();
-                    if (!BossAttack)
+                    if (!_bossAttack)
                     {
                         UpdateState(BossState.Stable);
                         ResetBossSpeed();
@@ -92,7 +94,7 @@ namespace FtDCode.Boss
                     break;
 
                 case BossState.Retreating:
-                    if (BossAttack) UpdateState(BossState.Attack);   
+                    if (_bossAttack) UpdateState(BossState.Attack);   
                     _deltaTime += Time.deltaTime;
                     if (_deltaTime >= TimeToResetDistance)
                     {
@@ -102,13 +104,13 @@ namespace FtDCode.Boss
                     if (_actualDistance >= defaultDistance)
                     {
                         UpdateState(BossState.Stable);
-                        BossAttack = false;
+                        _bossAttack = false;
                         ResetBossSpeed();
                     }
                     break;
 
                 case BossState.Approaching:
-                    if (BossAttack) UpdateState(BossState.Attack);   
+                    if (_bossAttack) UpdateState(BossState.Attack);   
                     _deltaTime += Time.deltaTime;
                     if (_actualDistance > defaultDistance && _deltaTime >= TimeToResetDistance)
                     {
@@ -150,6 +152,14 @@ namespace FtDCode.Boss
 
             defaultVerticalSpeed = originalSpeed; 
             ResetBossSpeed();
+        }
+        
+        public void ToggleAttack(bool isAttacking)
+        {
+            _bossAttack = isAttacking;
+            headAttack.enabled = isAttacking;
+            headRotation.ResetRotation();
+            headRotation.enabled = !isAttacking;
         }
     }
 }

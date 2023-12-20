@@ -9,10 +9,9 @@ namespace FtDCode.Level
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            BossMovement.BossAttack = isTurningOn;
-            HeadAttack.IsEnabled = isTurningOn;
-
-
+            var boss = other.GetComponent<BossMovement>();
+            if(boss == null) return;
+            boss.ToggleAttack(isTurningOn);
         }
     }
 }
