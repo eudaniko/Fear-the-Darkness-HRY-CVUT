@@ -24,7 +24,6 @@ namespace FtDCode.Obstacle
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            UnityEngine.Debug.Log("dfijhh");
             var flammable = other.GetComponent<IFlammable>();
             flammable?.Ignite();
         }

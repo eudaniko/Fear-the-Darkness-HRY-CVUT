@@ -1,5 +1,3 @@
-using System;
-using FtDCode.Level;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -50,7 +48,7 @@ namespace FtDCode.Core
         
         public void ResetProgress()
         {
-            PlayerPrefs.DeleteKey(CheckpointPref);
+            PlayerPrefs.DeleteAll();
         }
         
         public void QuitGame()
