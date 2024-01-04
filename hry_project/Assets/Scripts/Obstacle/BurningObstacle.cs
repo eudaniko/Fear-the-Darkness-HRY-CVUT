@@ -1,5 +1,6 @@
 ﻿using System;
 using FtDCode.Boss;
+using FtDCode.Player;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
@@ -14,6 +15,7 @@ namespace FtDCode.Obstacle
         private Collider2D _burningCollider;
         private GameObject _light;
         private SpriteRenderer _sprite;
+        private const int _scoreModifier = 10;
 
         private void Awake()
         {
@@ -26,6 +28,7 @@ namespace FtDCode.Obstacle
         public void Interact(GameObject player)
         {
             _burningCollider.enabled = true;
+            PlayerScore.CurrentScore += _scoreModifier;
             _light.SetActive(true);
         }
         
