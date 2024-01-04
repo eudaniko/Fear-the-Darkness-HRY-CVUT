@@ -13,7 +13,7 @@ namespace FtDCode.Core
 
         private void Awake()
         {
-            _mainCamera = GetComponent<UnityEngine.Camera>();
+            _mainCamera = UnityEngine.Camera.main;
         }
 
         void Update()
@@ -24,13 +24,12 @@ namespace FtDCode.Core
                 _isShaking = false;
                 return;
             }
-            var transform1 = _mainCamera.transform;
-            transform1.localPosition = transform1.localPosition +
-                                       (Vector3)(Random.insideUnitCircle * _currentShakeForce);
+            _mainCamera.transform.position = _mainCamera.transform.position + 
+                                                  (Vector3)(Random.insideUnitCircle * _currentShakeForce);
             _currentShakeForce -= decreaseFactor * Time.deltaTime;
         }
         
-        public void ShakeScreen()
+        public void ShakeScreen()   
         {
             _currentShakeForce = initialShakeForce;
             _isShaking = true;

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8451690508875798711}
   - component: {fileID: 7784194199179608324}
   - component: {fileID: 1647620157715686393}
-  m_Layer: 17
+  m_Layer: 12
   m_Name: BossAttackTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}

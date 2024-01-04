@@ -1,4 +1,3 @@
-using FtDCode.Level;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,11 +5,19 @@ namespace FtDCode.Core
 {
     public class ScenesManager : MonoBehaviour
     {
+        [SerializeField] bool isEndless;
         private const string GameOverScene = "GameOverMenu";
         private const string MainScene = "Main";
         private const string MainMenuScene = "MainMenu";
         private const string VictoryMenuScene = "VictoryMenu";
+        private const string EndlessGameOverScene = "EndlessGameOverMenu";
+        private const string CheckpointPref = "Checkpoint";
 
+
+        private void Awake()
+        {
+            AudioListener.pause = false;
+        }
 
         public void LoadScene(string sceneName)
         {
@@ -25,7 +32,7 @@ namespace FtDCode.Core
 
         public void GameOver()
         {
-            LoadScene(GameOverScene);
+            LoadScene(isEndless ? EndlessGameOverScene : GameOverScene);
         }
 
         public void StartGame()
@@ -42,7 +49,7 @@ namespace FtDCode.Core
         {
             PlayerPrefs.DeleteAll();
         }
-
+        
         public void QuitGame()
         {
             Application.Quit();

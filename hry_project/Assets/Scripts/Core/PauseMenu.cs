@@ -30,6 +30,7 @@ namespace FtDCode.Core
         {
             pauseMenu.SetActive(true);
             Time.timeScale = 0;
+            AudioListener.pause = true;
             isPaused = true;
         }
 
@@ -37,6 +38,7 @@ namespace FtDCode.Core
         {
             pauseMenu.SetActive(false);
             Time.timeScale = 1;
+            AudioListener.pause = false;
             isPaused = false;
         }
     }
