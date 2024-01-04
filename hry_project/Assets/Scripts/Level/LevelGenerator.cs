@@ -17,7 +17,7 @@ namespace FtDCode.Level
         private const string EndlessFolderPath = "Chunks/Endless";
         private const string ChunkFolderPath = "Chunks/Game";
         private const string TestFolderPath = "Chunks/Test";
-        private const string CheckpointPref = "Chekpoint";
+        private const string CheckpointPref = "Checkpoint";
         private const float AccelerationStep = 0.015f;
         private float _accelerationPoint = 0;
         private const float FirstChunkLength = 30;
@@ -44,6 +44,7 @@ namespace FtDCode.Level
             }
             _level = transform.parent;
             LastCheckpointNumber = PlayerPrefs.GetInt(CheckpointPref, 0);
+            UnityEngine.Debug.Log(LastCheckpointNumber);
             InitializeQueues();
         }
 
@@ -79,7 +80,7 @@ namespace FtDCode.Level
             if (_inactiveChunks.Count < 1 && EnableEndlessGeneration)
             {
                 Shuffle();
-                for (var i = LastCheckpointNumber; i < _allChunks.Length; i++)
+                for (var i = 0; i < _allChunks.Length; i++)
                 {
                     _inactiveChunks.Enqueue((GameObject)_randomizedChunks[i]);
                 }
@@ -102,9 +103,9 @@ namespace FtDCode.Level
         {
             if (EnableEndlessGeneration)
             {
-                foreach (var chunk in _randomizedChunks)
+                for (var i = 0; i < _randomizedChunks.Length; i++ )
                 {
-                    _inactiveChunks.Enqueue((GameObject)chunk);
+                    _inactiveChunks.Enqueue((GameObject)_randomizedChunks[i]);
                 }
             }
             else

@@ -13,7 +13,7 @@ namespace FtDCode.Core
 
         private void Awake()
         {
-            _mainCamera = GetComponent<UnityEngine.Camera>();
+            _mainCamera = UnityEngine.Camera.main;
         }
 
         void Update()

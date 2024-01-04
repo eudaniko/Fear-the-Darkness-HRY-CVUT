@@ -17,10 +17,9 @@ namespace FtDCode.Level
             _trigger = GetComponent<Collider2D>();
             if (LevelGenerator.LastCheckpointNumber == number && !LevelGenerator.EnableEndlessGeneration)
             {
-                GetComponent<Collider2D>().enabled = false;
+                _trigger.enabled = false;
             }
         }
-
 
         private void OnTriggerEnter2D(Collider2D other)
         {

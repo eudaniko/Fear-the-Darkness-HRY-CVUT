@@ -27,7 +27,6 @@ namespace FtDCode.Core
 
         public static void FinishRun()
         {
-            PlayerPrefs.DeleteKey(CheckpointPref);
             SceneManager.LoadScene(VictoryMenuScene);
         }
 

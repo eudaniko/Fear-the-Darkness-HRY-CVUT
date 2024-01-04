@@ -208,7 +208,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.3
+  m_fontSize: 18.6
   m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2c3255974bc4490854fbf0f61c79f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEndless: 0
 --- !u!1 &1092484856
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,6 +491,7 @@ GameObject:
   - component: {fileID: 1181620206}
   - component: {fileID: 1181620205}
   - component: {fileID: 1181620208}
+  - component: {fileID: 1181620209}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -615,6 +617,18 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!114 &1181620209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181620204}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 412d5ec91d748fc408385d9ab090193c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &640096214084604451
 PrefabInstance:
   m_ObjectHideFlags: 0
