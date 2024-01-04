@@ -24,13 +24,13 @@ namespace FtDCode.Core
                 _isShaking = false;
                 return;
             }
-            var transform1 = _mainCamera.transform;
-            transform1.localPosition = transform1.localPosition +
-                                       (Vector3)(Random.insideUnitCircle * _currentShakeForce);
+            var currentPosition = _mainCamera.transform.localPosition;
+            _mainCamera.transform.localPosition = currentPosition + 
+                                                  (Vector3)(Random.insideUnitCircle * _currentShakeForce);
             _currentShakeForce -= decreaseFactor * Time.deltaTime;
         }
         
-        public void ShakeScreen()
+        public void ShakeScreen()   
         {
             _currentShakeForce = initialShakeForce;
             _isShaking = true;

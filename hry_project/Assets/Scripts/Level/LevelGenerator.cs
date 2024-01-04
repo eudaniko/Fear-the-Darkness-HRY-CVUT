@@ -100,9 +100,9 @@ namespace FtDCode.Level
         {
             if (enableEndlessGeneration)
             {
-                for (var i = LastCheckpointNumber; i < _randomizedChunks.Length; i++)
+                foreach (var chunk in _randomizedChunks)
                 {
-                    _inactiveChunks.Enqueue((GameObject)_randomizedChunks[i]);
+                    _inactiveChunks.Enqueue((GameObject)chunk);
                 }
             }
             else
