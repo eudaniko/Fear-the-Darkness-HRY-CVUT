@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Object = UnityEngine.Object;
 using Random = UnityEngine.Random;
 
@@ -7,7 +8,7 @@ namespace FtDCode.Level
 {
     public class LevelGenerator : MonoBehaviour
     {
-        [SerializeField] private bool enableEndlessGeneration;
+        public static bool EnableEndlessGeneration;
         [SerializeField] private bool useTestChunks;
         [SerializeField] private int initialChunkCount;
         [SerializeField] private int activeChunkCount;
@@ -29,7 +30,8 @@ namespace FtDCode.Level
 
         private void Awake()
         {
-            if (enableEndlessGeneration)
+            EnableEndlessGeneration = SceneManager.GetActiveScene().name == "Endless";
+            if (EnableEndlessGeneration)
             {
                 _allChunks = Resources.LoadAll(EndlessFolderPath);
                 _randomizedChunks = new Object[_allChunks.Length];
@@ -74,7 +76,7 @@ namespace FtDCode.Level
 
         private void ShiftChunks()
         {
-            if (_inactiveChunks.Count < 1 && enableEndlessGeneration)
+            if (_inactiveChunks.Count < 1 && EnableEndlessGeneration)
             {
                 Shuffle();
                 for (var i = LastCheckpointNumber; i < _allChunks.Length; i++)
@@ -91,14 +93,14 @@ namespace FtDCode.Level
             var newChunk = _inactiveChunks.Dequeue();
             SpawnChunk(newChunk);
             
-            if(!enableEndlessGeneration) return;
+            if(!EnableEndlessGeneration) return;
             _accelerationPoint += AccelerationStep;
             Time.timeScale = 1 + speedCurve.Evaluate(_accelerationPoint);
         }
 
         private void InitializeQueues()
         {
-            if (enableEndlessGeneration)
+            if (EnableEndlessGeneration)
             {
                 foreach (var chunk in _randomizedChunks)
                 {

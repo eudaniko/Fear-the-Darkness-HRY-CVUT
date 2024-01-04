@@ -24,8 +24,7 @@ namespace FtDCode.Core
                 _isShaking = false;
                 return;
             }
-            var currentPosition = _mainCamera.transform.localPosition;
-            _mainCamera.transform.localPosition = currentPosition + 
+            _mainCamera.transform.position = _mainCamera.transform.position + 
                                                   (Vector3)(Random.insideUnitCircle * _currentShakeForce);
             _currentShakeForce -= decreaseFactor * Time.deltaTime;
         }
