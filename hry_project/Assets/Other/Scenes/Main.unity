@@ -221,17 +221,17 @@ PrefabInstance:
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
       propertyPath: useTestChunks
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
       propertyPath: activeChunkCount
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 696681784931077829, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
       propertyPath: initialChunkCount
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2860735880949495217, guid: a57192c15121c2244bc4b222d5553726,
         type: 3}
@@ -676,6 +676,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2c3255974bc4490854fbf0f61c79f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEndless: 0
 --- !u!4 &1471437634 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 300173331565673984, guid: 7330dae570fd4a743866cfd6ac686895,

@@ -4,8 +4,9 @@ using System.Collections;
 
 namespace FtDCode.Obstacle
 {
-    public class DestructibleObstacle : MonoBehaviour, IInteractable
+    public class DestructibleObstacle : MonoBehaviour, IInteractable, IFlammable
     {
+        [SerializeField] private GameObject fireSpreadCollider;
         private Animator _animator;
         private static readonly int Destroy1 = Animator.StringToHash("Destroy");
         private const string FireLight = "FireLight";
@@ -28,6 +29,16 @@ namespace FtDCode.Obstacle
             {
                 Destroy(gameObject);
             }
+
+            if (fireSpreadCollider != null)
+            {
+                fireSpreadCollider.SetActive(true);
+            }
+        }
+
+        public void Ignite()
+        {
+            Interact(null);
         }
 
         private IEnumerator DestroyAfterAnimation()

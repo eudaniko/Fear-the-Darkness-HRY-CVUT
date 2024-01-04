@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 
 namespace FtDCode.Obstacle
 {
-    public class BurningObstacle : MonoBehaviour, IInteractable
+    public class BurningObstacle : MonoBehaviour, IInteractable, IFlammable
     {
         [SerializeField] private float damage;
         [SerializeField] private float slowedSpeed;
@@ -30,6 +30,11 @@ namespace FtDCode.Obstacle
             _burningCollider.enabled = true;
             PlayerScore.CurrentScore += _scoreModifier;
             _light.SetActive(true);
+        }
+        
+        public void Ignite()
+        {
+            Interact(null);
         }
         
         private void OnTriggerEnter2D(Collider2D other)
