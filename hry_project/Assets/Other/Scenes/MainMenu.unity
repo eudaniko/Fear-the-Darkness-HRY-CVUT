@@ -208,7 +208,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.95
+  m_fontSize: 47.3
   m_fontSizeBase: 46.8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -417,7 +417,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 890892374}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -505,9 +505,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
+  m_Sprite: {fileID: 21300000, guid: 7ad87d851dd782344ab8f40921e615b4, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -991,7 +991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1247923732
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1191,7 +1191,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 26.9
+  m_fontSize: 44.9
   m_fontSizeBase: 46.8
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1277,7 +1277,7 @@ PrefabInstance:
     - target: {fileID: 2253519755614370968, guid: c34d442f190bb4637b9651e745b1f414,
         type: 3}
       propertyPath: m_fontSize
-      value: 26.9
+      value: 44.9
       objectReference: {fileID: 0}
     - target: {fileID: 3075304102221508389, guid: c34d442f190bb4637b9651e745b1f414,
         type: 3}
@@ -1368,7 +1368,7 @@ PrefabInstance:
     - target: {fileID: 3885771868848347100, guid: c34d442f190bb4637b9651e745b1f414,
         type: 3}
       propertyPath: m_fontSize
-      value: 26.9
+      value: 44.9
       objectReference: {fileID: 0}
     - target: {fileID: 4258227141577631179, guid: c34d442f190bb4637b9651e745b1f414,
         type: 3}
@@ -1413,7 +1413,7 @@ PrefabInstance:
     - target: {fileID: 5230975764790573856, guid: c34d442f190bb4637b9651e745b1f414,
         type: 3}
       propertyPath: m_fontSize
-      value: 26.9
+      value: 44.9
       objectReference: {fileID: 0}
     - target: {fileID: 5862097944878195515, guid: c34d442f190bb4637b9651e745b1f414,
         type: 3}
