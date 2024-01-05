@@ -1,16 +1,16 @@
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.Serialization;
 
 
 namespace FtDCode.Player
 {
     public class RandomLightIntensityChange : MonoBehaviour
     { 
-        [SerializeField] private GameObject player;
         [SerializeField] private float maxIntensityDeviation=1;
         [SerializeField] private float changeInterval = 0.1f;
         [SerializeField] private float maxRandomChangeAmount = 0.2f;
-        private float _defaultHealthIntensity;
+        private float _defaultLightIntensity;
         private float _currentIntensity, _deltaIntensity, _newIntensity;
         private Light2D _light2D;
         private float _timer;
@@ -18,7 +18,7 @@ namespace FtDCode.Player
         private void Start()
         {
             _light2D = GetComponent<Light2D>();
-            _defaultHealthIntensity = player.GetComponent<PlayerHealth>().currentHp;
+            _defaultLightIntensity = _light2D.intensity;
             _timer = changeInterval;
         }
 
@@ -36,8 +36,8 @@ namespace FtDCode.Player
 
                 // Apply the change
                 _newIntensity = Mathf.Clamp(_currentIntensity + _deltaIntensity,
-                                            Mathf.Max(0f, _defaultHealthIntensity - maxIntensityDeviation),
-                                            _defaultHealthIntensity);
+                                            Mathf.Max(0f, _defaultLightIntensity - maxIntensityDeviation),
+                                            _defaultLightIntensity);
 
 
                 // Set the new intensity

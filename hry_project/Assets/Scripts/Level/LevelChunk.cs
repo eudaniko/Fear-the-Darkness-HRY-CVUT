@@ -14,18 +14,19 @@ namespace FtDCode.Level
 
         private void Awake()
         {
-            if (LevelGenerator.LastCheckpoint == number)
+            _trigger = GetComponent<Collider2D>();
+            if (LevelGenerator.LastCheckpointNumber == number && !LevelGenerator.EnableEndlessGeneration)
             {
-                GetComponent<Collider2D>().enabled = false;
+                _trigger.enabled = false;
             }
         }
-
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             OnChunkChange?.Invoke();
+            _trigger.enabled = false;
             if (!isCheckpoint) return;
-            LevelGenerator.LastCheckpoint = number;
+            LevelGenerator.LastCheckpointNumber = number;
         }
     }
 }
